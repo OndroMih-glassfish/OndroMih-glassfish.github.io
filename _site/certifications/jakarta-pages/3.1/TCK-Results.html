@@ -1,0 +1,531 @@
+<!--
+  Copyright (c) 2018 Eclipse Foundation, Inc.
+
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v. 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0.
+
+  Contributors:
+    Christopher Guindon <chris.guindon@eclipse-foundation.org>
+
+  SPDX-License-Identifier: EPL-2.0
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://www.eclipse.org/favicon.ico" rel='icon' type='image/x-icon'/>
+    <!-- Links and stylesheets -->
+    <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/quicksilver.min.css?v0.0.211">
+    <link rel="stylesheet" href="/assets/css/style.css?v=8a43030a46ae6bb227aca63dad7fb5c6e54840d0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" type="text/css"/>
+    <title>TCK Results</title>
+      <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5WLCZXC');</script>
+  <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <a class=sr-only href=#content>Skip to main content</a>
+<header class="header-wrapper header-default-bg-img" id=header-wrapper>
+  <div class="clearfix toolbar-container-wrapper">
+    <div class=container>
+      <div class="text-right toolbar-row row hidden-print">
+        <div class="col-md-24 row-toolbar-col">
+          <ul class=list-inline>
+            <li><a href=https://accounts.eclipse.org/user/edit data-tab-destination=tab-profile><i class="fa fa-edit fa-fw"></i>Edit my account</a></li>
+            <li><a class="toolbar-link toolbar-manage-cookies dropdown-toggle"><i class="fa fa-wrench"></i>Manage Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=navbar-wrapper>
+    <div class=container>
+      <div class=row id=header-row>
+        <div class="col-sm-5 col-md-4" id=header-left>
+          <div class=wrapper-logo-default><a title="Hugo Solstice Theme" href=https://www.eclipse.org><img width=140 class="logo-eclipse-default img-responsive hidden-xs" src=https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg alt="Hugo Solstice Theme"></a></div>
+        </div>
+        <div class="col-sm-19 col-md-20 margin-top-10" id=main-menu-wrapper>
+          <div class="float-right hidden-xs" id=btn-call-for-action>
+            
+            <div id=btn-call-for-action><a href="/download" class="btn btn-huge btn-warning"><i class="fa fa-download"></i>Download</a></div>
+            
+          </div>
+          <div class="navbar float-sm-right yamm" id=main-menu>
+            <div class="navbar-collapse collapse reset float-right" id=navbar-main-menu>
+              <ul class="nav navbar-nav">
+                <li><a href="https://www.eclipse.org/projects/" target="_self">Projects</a></li>
+<li><a href="https://www.eclipse.org/org/workinggroups/" target="_self">Working Groups</a></li>
+<li><a href="https://www.eclipse.org/membership/" target="_self">Members</a></li>
+<li class="dropdown visible-xs">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Community <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li><a href="http://marketplace.eclipse.org">Marketplace</a></li>
+    <li><a href="http://events.eclipse.org">Events</a></li>
+    <li><a href="http://www.planeteclipse.org/">Planet Eclipse</a></li>
+    <li><a href="https://www.eclipse.org/community/eclipse_newsletter/">Newsletter</a></li>
+    <li><a href="https://www.youtube.com/user/EclipseFdn">Videos</a></li>
+    <li><a href="https://blogs.eclipse.org">Blogs</a></li>
+  </ul>
+</li>
+<li class="dropdown visible-xs">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Participate <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li>
+    <li><a href="https://www.eclipse.org/forums/">Forums</a></li>
+    <li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li>
+    <li><a href="https://wiki.eclipse.org/">Wiki</a></li>
+    <li><a href="https://wiki.eclipse.org/IRC">IRC</a></li>
+    <li><a href="https://www.eclipse.org/org/research/">Research</a></li>
+  </ul>
+</li>
+<li class="dropdown visible-xs">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Eclipse IDE <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li><a href="https://www.eclipse.org/downloads">Download</a></li>
+    <li><a href="https://www.eclipse.org/eclipseide">Learn More</a></li>
+    <li><a href="https://help.eclipse.org">Documentation</a></li>
+    <li><a href="https://www.eclipse.org/getting_started">Getting Started / Support</a></li>
+    <li><a href="https://www.eclipse.org/contribute/">How to Contribute</a></li>
+    <li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li>
+    <li><a href="https://www.eclipse.org/forums/index.php/f/89/">Newcomer Forum</a></li>
+  </ul>
+</li>
+<!-- More -->
+<li class="dropdown eclipse-more hidden-xs">
+  <a data-toggle="dropdown" class="dropdown-toggle" role="button">More<b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <div class="yamm-content">
+        <div class="row">
+          <ul class="col-sm-8 list-unstyled">
+            <li>
+              <p>
+                <strong>Community</strong>
+              </p>
+            </li>
+            <li>
+              <a href="http://marketplace.eclipse.org">Marketplace</a>
+            </li>
+            <li>
+              <a href="http://events.eclipse.org">Events</a>
+            </li>
+            <li>
+              <a href="http://www.planeteclipse.org/">Planet Eclipse</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/community/eclipse_newsletter/">Newsletter</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/user/EclipseFdn">Videos</a>
+            </li>
+            <li>
+              <a href="https://blogs.eclipse.org">Blogs</a>
+            </li>
+          </ul>
+          <ul class="col-sm-8 list-unstyled">
+            <li>
+              <p>
+                <strong>Participate</strong>
+              </p>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/downloads">Download</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/forums/">Forums</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/mail/">Mailing Lists</a>
+            </li>
+            <li>
+              <a href="https://wiki.eclipse.org/">Wiki</a>
+            </li>
+            <li>
+              <a href="https://wiki.eclipse.org/IRC">IRC</a>
+            </li>
+          </ul>
+          <ul class="col-sm-8 list-unstyled">
+            <li>
+              <p>
+                <strong>Eclipse IDE</strong>
+              </p>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/downloads">Download</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/downloads">Learn more</a>
+            </li>
+            <li>
+              <a href="https://help.eclipse.org">Documentation</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/getting_started">Getting Started / Support</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/contribute/">How to Contribute</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/ide/">IDE and Tools</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/forums/index.php/f/89/">Newcomer Forum</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</li>
+<li class="dropdown eclipse-more main-menu-search open">
+  <a data-toggle="dropdown" class="dropdown-toggle" role="button" aria-label="Open Google Search menu" aria-expanded="true">
+    <i class="fa fa-search"></i>
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <!-- Content container to add padding -->
+      <div class="yamm-content">
+        <div class="row">
+          <div class="col-sm-24">
+            <p>Search</p>
+            <form action="https://www.eclipse.org/home/search" method="get">
+              <div class="form-group">
+                <input class="form-control margin-bottom-10" type="textfield" name="q" placeholder="Search">
+                <input class="btn btn-primary" type="submit" value="Submit">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</li>
+
+
+              </ul>
+            </div>
+            <div class=navbar-header>
+              <button type=button class=navbar-toggle data-toggle=collapse data-target=#navbar-main-menu>
+              <span class=sr-only>Toggle navigation</span>
+              <span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button>
+              <div class=wrapper-logo-mobile><a class="navbar-brand visible-xs" title="Hugo Solstice Theme" href=https://www.eclipse.org><img width=140 class="logo-eclipse-default-mobile img-responsive" src=https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg alt="Hugo Solstice Theme"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron featured-jumbotron margin-bottom-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-20 col-md-offset-2 col-sm-18 col-sm-offset-3">
+          <h1>Eclipse GlassFish</h1>
+          <h2>Open Source Jakarta EE Platform Implementation</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <section class="default-breadcrumbs hidden-print" id="breadcrumb">
+  <div class="container">
+  <h3 class="sr-only">Breadcrumbs</h3>
+  <div class="row">
+    <div class="col-sm-24">
+      <ol class="breadcrumb">
+        <li>
+          <a href="https://www.eclipse.org/">Home</a>
+        </li>
+        <li class="active">
+          <a href="http://localhost:4000/">Eclipse GlassFish</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  </div>
+</section>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-18 padding-bottom-30">
+            <div class="nav top-nav">
+    <ul>
+        <li class="icon download">
+            <a href="/download.html">Download<p>Distributions, Release Notes</p></a>
+            </li>
+        <li class="icon documentation">
+            <a href="/documentation.html">Documentation<p>User Guides, Manuals</p></a>
+        </li>
+        <li class="icon contributing">
+            <a href="/CONTRIBUTING.html">Get Involved<p>Contributing, Developer Resources</p></a>
+        </li>
+        <li class="icon support">
+            <a href="/support.html">Support<p>Professional Services or Support</p></a>
+        </li>
+    </ul>
+</div>
+
+            <h1 id="tck-results">TCK Results</h1>
+
+<p>As required by the
+<a href="https://www.eclipse.org/legal/tck.php">Eclipse Foundation Technology Compatibility Kit License</a>,
+following is a summary of the TCK results for releases of Jakarta Server Pages.</p>
+
+<h1 id="eclipse-wasp-310-certification-summary">Eclipse WaSP 3.1.0, Certification Summary</h1>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Organization Name (“Organization”) and, if applicable, URL: <br />
+Eclipse Foundation</p>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Product Name, Version and download URL (if applicable): <br />
+Eclipse WaSP 3.1.0-M3 provides Jakarta Server Pages 3.1
+<a href="https://github.com/eclipse-ee4j/wasp">Eclipse WaSP Project</a>
+<a href="https://github.com/eclipse-ee4j/glassfish/releases/download/7.0.0-28-04-2022/glassfish.zip">Eclipse Glassfish 7.0.0-28-04-2022</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Specification Name, Version and download URL: <br />
+<a href="https://jakarta.ee/specifications/pages/3.1/">Jakarta Server Pages 3.1</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />TCK Version, digital SHA-256 fingerprint and download URL: <br />
+<a href="https://download.eclipse.org/ee4j/jakartaee-tck/jakartaee10/staged/eftl/jakarta-pages-tck-3.1.0.zip">Jakarta Server Pages TCK 3.1</a>,  SHA-256: <code class="language-plaintext highlighter-rouge">e9f33d463ca35bdf8a9985cc8871858d7e6ea8a6e90adb00a91a001b1e43e025</code></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Public URL of TCK Results Summary: <br />
+<a href="./TCK-Results">TCK results summary</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Any Additional Specification Certification Requirements: <br />
+None</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Java runtime used to run the implementation: <br />
+OpenJDK 11.0.2, 17.0.1, 18-ea</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Summary of the information for the certification environment, operating system, cloud, …: <br />
+Debian GNU/Linux 10</li>
+</ul>
+
+<p>Test results:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[javatest.batch] Number of Tests Passed      = 707
+[javatest.batch] Number of Tests Failed      = 0
+[javatest.batch] Number of Tests with Errors = 0
+
+-----
+SHA256_API=
+SHA256_IMPL=119d3e9c7237a54226723faa90ab087b0eb8c0ad755ce84e5c5032a9abe24e73
+SHA256_TCK=e9f33d463ca35bdf8a9985cc8871858d7e6ea8a6e90adb00a91a001b1e43e025
+-----
+API_download=https://jakarta.oss.sonatype.org/content/repositories/staging/jakarta/servlet/jsp/jakarta.servlet.jsp-api/3.1.0/jakarta.servlet.jsp-api-3.1.0.jar
+IMPL_download=https://jakarta.oss.sonatype.org/content/repositories/staging/org/glassfish/wasp/wasp/3.1.0-M3/wasp-3.1.0-M3.jar
+Product_download=https://github.com/eclipse-ee4j/glassfish/releases/download/7.0.0-28-04-2022/glassfish.zip
+Product_download_orig=https://ci.eclipse.org/glassfish/view/GlassFish/job/glassfish_build-and-test-using-jenkinsfile/job/master/697/artifact/bundles/glassfish.zip
+TCK_download=https://download.eclipse.org/ee4j/jakartaee-tck/jakartaee10/staged/eftl/jakarta-pages-tck-3.1.0.zip
+-----
+OS2=Debian GNU/Linux 10
+OS3=10.12
+OS4=PRETTY_NAME="Debian GNU/Linux 10 (buster)" NAME="Debian GNU/Linux" VERSION_ID="10" VERSION="10 (buster)" VERSION_CODENAME=buster ID=debian HOME_URL="https://www.debian.org/" SUPPORT_URL="https://www.debian.org/support" BUG_REPORT_URL="https://bugs.debian.org/"
+JDK_VERSION=openjdk version "11.0.2" 2019-01-15 OpenJDK Runtime Environment 18.9 (build 11.0.2+9) OpenJDK 64-Bit Server VM 18.9 (build 11.0.2+9, mixed mode)
+JDK_VERSION=openjdk version "17.0.1" 2021-10-19 OpenJDK Runtime Environment (build 17.0.1+12-39)  OpenJDK 64-Bit Server VM (build 17.0.1+12-39,  mixed mode, sharing)
+JDK_VERSION=openjdk version "18-ea"  2022-03-22 OpenJDK Runtime Environment (build 18-ea+27-1924) OpenJDK 64-Bit Server VM (build 18-ea+27-1924, mixed mode, sharing)
+
+</code></pre></div></div>
+
+          </div>
+          <div class="col-md-6  padding-bottom-30">
+            <!-- nav -->
+<aside id="main-sidebar">
+  <ul id="leftnav" class="ul-left-nav fa-ul hidden-print">
+
+    <li class="separator">
+      <a class="separator" href="/">Project Resources</a>
+    </li>
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="https://github.com/eclipse-ee4j/glassfish">Sources</a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="/documentation">Documentation</a>
+    </li>
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="/faq">FAQ</a>
+    </li>
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="/download">Download</a>
+    </li>
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="https://github.com/eclipse-ee4j/glassfish/issues">Issue Tracker</a>
+    </li>
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="https://accounts.eclipse.org/mailing-list/glassfish-dev">Mailing list</a>
+    </li>
+    
+    </ul>
+  </aside>
+  
+          </div>
+        </div>
+      </div>
+    </main>
+    <p id="back-to-top">
+  <a class="visible-xs" href="#top">Back to the top</a>
+</p>
+<footer id="solstice-footer">
+  <div class="container">
+    <div class="row">
+      <section class="col-sm-6 hidden-print" id="footer-eclipse-foundation">
+        <h2 class="section-title">Eclipse Foundation</h2>
+        <ul class="nav">
+          <li><a href="https://www.eclipse.org/org/">About Us</a></li>
+          <li>
+            <a href="https://www.eclipse.org/org/foundation/contact.php">Contact Us</a>
+          </li>
+          <li><a href="https://www.eclipse.org/sponsor">Sponsor</a></li>
+          <li><a href="https://www.eclipse.org/membership">Members</a></li>
+          <li>
+            <a href="https://www.eclipse.org/org/documents/">Governance</a>
+          </li>
+          <li>
+            <a
+              href="https://www.eclipse.org/org/documents/Community_Code_of_Conduct.php">Code of Conduct</a
+            >
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/artwork/">Logo and Artwork</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a>
+          </li>
+          <li><a href="https://www.eclipse.org/careers/">Careers</a></li>
+        </ul>
+      </section>
+      <section class="col-sm-6 hidden-print" id="footer-legal">
+        <h2 class="section-title">Legal</h2>
+        <ul class="nav">
+          <li>
+            <a href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/legal/termsofuse.php">Terms of Use</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/legal/epl-2.0/">Eclipse Public License</a>
+          </li>
+          <li><a href="https://www.eclipse.org/legal/">Legal Resources</a></li>
+        </ul>
+      </section>
+      <section class="col-sm-6 hidden-print" id="footer-useful-links">
+        <h2 class="section-title">Useful Links</h2>
+        <ul class="nav">
+          <li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li>
+          <li><a href="//help.eclipse.org/">Documentation</a></li>
+          <li>
+            <a href="https://www.eclipse.org/contribute/">How to Contribute</a>
+          </li>
+          <li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li>
+          <li><a href="https://www.eclipse.org/forums/">Forums</a></li>
+          <li><a href="//marketplace.eclipse.org">Marketplace</a></li>
+        </ul>
+      </section>
+      <section class="col-sm-6 hidden-print" id="footer-other">
+        <h2 class="section-title">Other</h2>
+        <ul class="nav">
+          <li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li>
+          <li><a href="https://www.eclipse.org/projects">Projects</a></li>
+          <li>
+            <a href="https://www.eclipse.org/org/workinggroups/">Working Groups</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/org/research/">Research@Eclipse</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/security/">Report a Vulnerability</a>
+          </li>
+          <li><a href="https://status.eclipse.org">Service Status</a></li>
+        </ul>
+      </section>
+      <div class="col-sm-24 margin-top-20">
+        <div class="row">
+          <div id="copyright" class="col-md-16">
+            <p id="copyright-text">
+              Copyright © Eclipse Foundation. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-8 social-media">
+            <ul class="list-inline">
+              <li>
+                <a class="social-media-link fa-stack fa-lg"
+                  href="https://twitter.com/EclipseFdn">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                  <span class="sr-only">Twitter account</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg"
+                  href="https://www.facebook.com/eclipse.org">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                  <span class="sr-only">Facebook account</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg"
+                  href="https://www.youtube.com/user/EclipseFdn">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-youtube fa-stack-1x"></i>
+                  <span class="sr-only">Youtube account</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg"
+                  href="https://www.linkedin.com/company/eclipse-foundation">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x"></i>
+                  <span class="sr-only">Linkedin account</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="scrollup" style="bottom: 100px; display: inline">
+        Back to the top
+      </a>
+    </div>
+  </div>
+</footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/main.min.js?var=1.3"></script>
+
+  </body>
+</html>
