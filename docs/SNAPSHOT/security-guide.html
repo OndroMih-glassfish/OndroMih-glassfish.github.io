@@ -206,7 +206,7 @@
 <p>Release 7</p>
 </div>
 <div class="paragraph">
-<p>Contributed 2018 - 2022</p>
+<p>Contributed 2018 - 2024</p>
 </div>
 <div class="paragraph">
 <p>This book provides instructions for configuring and administering
@@ -3582,12 +3582,7 @@ the HTTPS protocol to authenticate web clients.</p>
 <dt class="hdlist1">LDAP realm</dt>
 <dd>
 <p>Eclipse GlassFish can get user credentials from a Lightweight Directory
-Access Protocol (LDAP) server such as Oracle Virtual Directory (OVD)
-(<code><a href="http://www.oracle.com/technetwork/middleware/id-mgmt/overview/index.html" class="bare">http://www.oracle.com/technetwork/middleware/id-mgmt/overview/index.html</a></code>),
-Oracle Internet Directory (OID)
-(<code><a href="http://www.oracle.com/technetwork/indexes/products/index.html" class="bare">http://www.oracle.com/technetwork/indexes/products/index.html</a></code>), and
-Oracle Directory Server Enterprise Edition
-(<code><a href="http://www.oracle.com/us/products/middleware/identity-management/oracle-directory-services/index.html" class="bare">http://www.oracle.com/us/products/middleware/identity-management/oracle-directory-services/index.html</a></code>).
+Access Protocol (LDAP) server.
 LDAP is a protocol for enabling anyone to locate organizations,
 individuals, and other resources such as files and devices in a
 network, whether on the public Internet or on a corporate intranet.<br>
@@ -3652,7 +3647,7 @@ Oracle Solaris realm.</p>
 <p>A Pluggable Authentication Module (PAM) realm allows applications
 deployed on Eclipse GlassFish to authenticate users against a native
 Unix (Solaris/Linux/Mac OS) users list. PAM realms use the class name
-<code>com.sun.enterprise.security.auth.realm.pam.PamRealm</code> and the JAAS
+<code>com.sun.enterprise.security.ee.authentication.glassfish.pam.PamRealm</code> and the JAAS
 Context <code>pamRealm</code>.<br>
 This realm is supported on all Unix Operating Systems, including the
 Oracle Solaris 9 and Oracle Solaris 10 operating systems</p>
@@ -3904,7 +3899,7 @@ For instructions, see <a href="#to-create-an-authentication-realm">To Create an 
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The JAAS context should be <code>jdbcDigestRealm</code> for digest authentication
+<p>The JAAS context should be <code>digestRealm</code> for digest authentication
 or <code>jdbcRealm</code> for other authentication types.</p>
 </div>
 </td>
@@ -7966,7 +7961,7 @@ the user-supplied data as HTML.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-10 11:20:02 +0200
+Last updated 2024-08-12 02:38:18 +0200
 </div>
 </div>
 </body>

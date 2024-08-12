@@ -80,7 +80,7 @@
 <p>Release 7</p>
 </div>
 <div class="paragraph">
-<p>Contributed 2018 - 2022</p>
+<p>Contributed 2018 - 2024</p>
 </div>
 <div class="paragraph">
 <p>This document explains how to run applications in embedded Eclipse GlassFish and to develop applications in which
@@ -2041,8 +2041,7 @@ no version is specified, a default version is used.</p>
 </div>
 </li>
 <li>
-<p>Configure the <code>embedded-glassfish</code> goal prefix, the application
-name, and other standard settings.</p>
+<p>Configure the the path to the application WAR, and other standard settings.</p>
 <div class="paragraph">
 <p>Add the following <code>configuration</code> element to your POM file:</p>
 </div>
@@ -2054,8 +2053,6 @@ name, and other standard settings.</p>
             <span class="tag">&lt;plugin&gt;</span>
                 ...
                 <span class="tag">&lt;configuration&gt;</span>
-                    <span class="tag">&lt;goalPrefix&gt;</span>embedded-glassfish<span class="tag">&lt;/goalPrefix&gt;</span>
-                    ...
                     <span class="tag">&lt;app&gt;</span>target/test.war<span class="tag">&lt;/app&gt;</span>
                     <span class="tag">&lt;port&gt;</span>8080<span class="tag">&lt;/port&gt;</span>
                     <span class="tag">&lt;contextRoot&gt;</span>test<span class="tag">&lt;/contextRoot&gt;</span>
@@ -2092,7 +2089,6 @@ Add the following <code>configuration</code> element to your POM file:</p>
             <span class="tag">&lt;plugin&gt;</span>
                 ...
                 <span class="tag">&lt;configuration&gt;</span>
-                    <span class="tag">&lt;goalPrefix&gt;</span>embedded-glassfish<span class="tag">&lt;/goalPrefix&gt;</span>
                     <span class="tag">&lt;app&gt;</span>target/test.war<span class="tag">&lt;/app&gt;</span>
                     <span class="tag">&lt;name&gt;</span>test<span class="tag">&lt;/name&gt;</span>
                     <span class="tag">&lt;contextRoot&gt;</span>test<span class="tag">&lt;/contextRoot&gt;</span>
@@ -2210,7 +2206,6 @@ Line breaks in the following element are for readability purposes only
         <span class="tag">&lt;artifactId&gt;</span>maven-embedded-glassfish-plugin<span class="tag">&lt;/artifactId&gt;</span>
         <span class="tag">&lt;version&gt;</span>3.1<span class="tag">&lt;/version&gt;</span>
         <span class="tag">&lt;configuration&gt;</span>
-          <span class="tag">&lt;goalPrefix&gt;</span>embedded-glassfish<span class="tag">&lt;/goalPrefix&gt;</span>
           <span class="tag">&lt;app&gt;</span>target/test.war<span class="tag">&lt;/app&gt;</span>
           <span class="tag">&lt;port&gt;</span>8080<span class="tag">&lt;/port&gt;</span>
           <span class="tag">&lt;contextRoot&gt;</span>test<span class="tag">&lt;/contextRoot&gt;</span>
@@ -2894,13 +2889,10 @@ Maven with the EJB 3.1 Embeddable API and Embedded Eclipse GlassFish</a>.</p>
 <div class="paragraph">
 <p>The EJB 3.1 Embeddable API is described in
 <a href="http://jcp.org/en/jsr/detail?id=318">Java Specification Request (JSR) 318</a>
-(<code><a href="http://jcp.org/en/jsr/detail?id=318" class="bare">http://jcp.org/en/jsr/detail?id=318</a></code>). An <code>ejb-embedded</code> sample
-is included in the samples available at
-<a href="http://www.oracle.com/technetwork/java/javaee/downloads/index.html">Java EE 7 Downloads</a>
-(<code><a href="http://www.oracle.com/technetwork/java/javaee/downloads/index.html" class="bare">http://www.oracle.com/technetwork/java/javaee/downloads/index.html</a></code>)
-or
-<a href="http://www.oracle.com/technetwork/java/javaee/documentation/index.html">Code Samples</a>
-(<code><a href="http://www.oracle.com/technetwork/java/javaee/documentation/index.html" class="bare">http://www.oracle.com/technetwork/java/javaee/documentation/index.html</a></code>).</p>
+(<code><a href="http://jcp.org/en/jsr/detail?id=318" class="bare">http://jcp.org/en/jsr/detail?id=318</a></code>). An <code>ejb-embedded</code> example
+is available at
+<a href="https://jakarta.ee/learn/docs/jakartaee-tutorial/9.1/entbeans/ejb-embedded/ejb-embedded.html">Code Samples</a>
+(<code><a href="https://jakarta.ee/learn/docs/jakartaee-tutorial/9.1/entbeans/ejb-embedded/ejb-embedded.html" class="bare">https://jakarta.ee/learn/docs/jakartaee-tutorial/9.1/entbeans/ejb-embedded/ejb-embedded.html</a></code>).</p>
 </div>
 <div class="paragraph">
 <p>The EJB 3.1 Embeddable API supports all EJB 3.1 Lite features with
@@ -3400,7 +3392,7 @@ archive (JAR) file in which embedded Eclipse GlassFish is distributed:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-10 11:20:02 +0200
+Last updated 2024-08-12 02:38:18 +0200
 </div>
 </div>
 </body>

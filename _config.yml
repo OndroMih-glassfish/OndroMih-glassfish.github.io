@@ -16,6 +16,3 @@ links:
 include:
   - LICENSE.md
   - CONTRIBUTING.md
-
-plugins:
-  - jekyll-toc

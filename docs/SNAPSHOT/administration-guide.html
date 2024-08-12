@@ -109,6 +109,7 @@
 <li><a href="#supported-content-types-in-requests-to-rest-resources">Supported Content Types in Requests to REST Resources</a></li>
 </ul>
 </li>
+<li><a href="#log-executed-admin-commands">Log executed admin commands</a></li>
 </ul>
 </li>
 <li><a href="#administering-domains">3 Administering Domains</a>
@@ -244,7 +245,8 @@
 <li><a href="#logger-levels">Logger Levels</a></li>
 </ul>
 </li>
-<li><a href="#configuring">Configuring the Logging Service</a>
+<li><a href="#configuring">Configuring the Logging Service</a></li>
+<li><a href="#log-records">Log Records</a>
 <ul class="sectlevel3">
 <li><a href="#loggers">Loggers</a></li>
 <li><a href="#handlers">Handlers</a></li>
@@ -666,7 +668,7 @@
 <p>Release 7</p>
 </div>
 <div class="paragraph">
-<p>Contributed 2018 - 2022</p>
+<p>Contributed 2018 - 2024</p>
 </div>
 <div class="paragraph">
 <p>Eclipse GlassFish 7 Administration Guide provides
@@ -1974,7 +1976,7 @@ however, there are exceptions.</p>
 <p><a href="#administration-console">Administration Console</a></p>
 </li>
 <li>
-<p>&lt;&lt;`asadmin` Utility&gt;&gt;</p>
+<p><a href="#asadmin-utility"><code>asadmin</code> Utility</a></p>
 </li>
 <li>
 <p><a href="#rest-interfaces">REST Interfaces</a></p>
@@ -1983,7 +1985,7 @@ however, there are exceptions.</p>
 <p><a href="#osgi-module-management-subsystem">OSGi Module Management Subsystem</a></p>
 </li>
 <li>
-<p>&lt;&lt;`keytool` Utility&gt;&gt;</p>
+<p><a href="#keytool-utility"><code>keytool</code> Utility</a></p>
 </li>
 <li>
 <p><a href="#java-monitoring-and-management-console-jconsole">Java Monitoring and Management Console (JConsole)</a></p>
@@ -2032,17 +2034,6 @@ instead of <code>http</code>) is used. Some browsers do not display pages on sec
 connections by default and must be configured to permit secure protocols
 (SSL and TLS).</p>
 </div>
-<div class="paragraph">
-<p>For Microsoft Windows, an alternate way to start the Eclipse GlassFish
-Administration Console is by using the Start menu.</p>
-</div>
-<div class="paragraph">
-<p>You can display the help material for a page in the Administration
-Console by clicking the Help button on the page. The initial help page
-describes the functions and fields of the page itself. Associated task
-instructions can be accessed on additional pages by clicking a link in
-the See Also list.</p>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2082,6 +2073,150 @@ Security</a>" in Eclipse GlassFish Security Guide.</p>
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>You can change the Administration Console startup behavior using the
+startup options.</p>
+</div>
+<div class="paragraph">
+<p>Available startup options are:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>default</code></dt>
+<dd>
+<p>The Administration Console loads on demand when its first accessed. This is the default option.</p>
+</dd>
+<dt class="hdlist1"><code>always</code></dt>
+<dd>
+<p>The Administration Console loads during Eclipse Glassfish server startup.</p>
+</dd>
+<dt class="hdlist1"><code>never</code></dt>
+<dd>
+<p>Prevents the Administration Console from loading thereby prohibiting it.</p>
+</dd>
+</dl>
+</div>
+<div class="sect4">
+<h5 id="to-enable-the-adminstration-console-on-demand-loading"><a class="anchor" href="#to-enable-the-adminstration-console-on-demand-loading"></a>To Enable the Administration Console On Demand Loading</h5>
+<div class="paragraph">
+<p>This is a default option.</p>
+</div>
+<div class="paragraph">
+<p>Enabling on demand loading of the Administration Console involves changing the value of the
+property <code>server.admin-service.property.adminConsoleStartup</code>. This property controls the
+Administration Console loading.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure that the DAS is running.</p>
+</li>
+<li>
+<p>Change the value of the <code>server.admin-service.property.adminConsoleStartup</code> property to <code>default</code>.
+You can change this value either by setting a configuration property or by editing a file.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To change this value by setting a configuration property, set the configuration property
+<code>server.admin-service.property.adminConsoleStartup</code> to the value <code>default</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>asadmin&gt; set server.admin-service.property.adminConsoleStartup=default</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Restart the DAS.
+For instructions, see <a href="#to-restart-a-domain">To Restart a Domain</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="to-enable-the-administration-console-loading-at-server-startup"><a class="anchor" href="#to-enable-the-administration-console-loading-at-server-startup"></a>To Enable the Administration Console Loading At Server Startup</h5>
+<div class="paragraph">
+<p>Enabling the Administration Console loading at Eclipse Glassfish server startup involves changing
+the value of the property <code>server.admin-service.property.adminConsoleStartup</code>. This property
+controls the Administration Console loading.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure that the DAS is running.</p>
+</li>
+<li>
+<p>Change the value of the <code>server.admin-service.property.adminConsoleStartup</code> property to <code>always</code>.
+You can change this value either by setting a configuration property or by editing a file.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To change this value by setting a configuration property, set the configuration property
+<code>server.admin-service.property.adminConsoleStartup</code> to a value <code>always</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>asadmin&gt; set server.admin-service.property.adminConsoleStartup=always</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Restart the DAS.
+For instructions, see <a href="#to-restart-a-domain">To Restart a Domain</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="to-disable-the-administration-console-loading"><a class="anchor" href="#to-disable-the-administration-console-loading"></a>To Disable the Administration Console Loading</h5>
+<div class="paragraph">
+<p>Disabling the Administration Console loading involves changing the value of the property
+<code>server.admin-service.property.adminConsoleStartup</code>. This property controls the Administration
+Console loading.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure that the DAS is running.</p>
+</li>
+<li>
+<p>Change the value of the <code>server.admin-service.property.adminConsoleStartup</code> property to <code>never</code>.
+You can change this value either by setting a configuration property or by editing the file.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To change this value by setting a configuration property, set the configuration property
+<code>server.admin-service.property.adminConsoleStartup</code> to a value <code>never</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>asadmin&gt; set server.admin-service.property.adminConsoleStartup=never</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Restart the DAS.
+For instructions, see <a href="#to-restart-a-domain">To Restart a Domain</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="help-pages-in-the-administration-console"><a class="anchor" href="#help-pages-in-the-administration-console"></a>Help pages in the Administration Console</h5>
+<div class="paragraph">
+<p>You can display the help material for a page in the Administration
+Console by clicking the Help button on the page. The initial help page
+describes the functions and fields of the page itself. Associated task
+instructions can be accessed on additional pages by clicking a link in
+the See Also list.</p>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -2749,7 +2884,7 @@ instead of the Administration Console interface.</p>
 <p><a href="#path-to-the-asadmin-utility">Path to the <code>asadmin</code> Utility</a></p>
 </li>
 <li>
-<p>&lt;&lt;`asadmin` Utility Syntax&gt;&gt;</p>
+<p><a href="#asadmin-utility-syntax"><code>asadmin</code> Utility Syntax</a></p>
 </li>
 <li>
 <p><a href="#to-run-an-asadmin-utility-subcommand-in-single-mode">To Run an <code>asadmin</code> Utility Subcommand in Single Mode</a></p>
@@ -7024,6 +7159,53 @@ specify the type through the <code>-H</code> option as follows:</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="log-executed-admin-commands"><a class="anchor" href="#log-executed-admin-commands"></a>Log executed admin commands</h3>
+<div class="paragraph">
+<p>It&#8217;s possible to log admin commands executed either using the asadmin CLI, Admin Console, or the REST interface.</p>
+</div>
+<div class="paragraph">
+<p>To enable this logging, set the system property <code>glassfish.commandlogger.logmode</code> on the DAS server to one of the following values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ALL_COMMANDS</code> - will log all commands</p>
+</li>
+<li>
+<p><code>WRITE_COMMANDS</code> - will log all commands that modify server configuration</p>
+</li>
+<li>
+<p><code>INTERNAL_COMMANDS</code> - will log all commands that modify server configuration and also those that start with <code>_</code> (internal commands)</p>
+</li>
+<li>
+<p><code>READ_WRITE_COMMANDS</code> - will log all commands that modify server configuration or return info about the configuration</p>
+</li>
+<li>
+<p><code>NO_COMMAND</code> - do not log any command, this is the default value if the property not specified</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The log message will be logged using <code>org.glassfish.extras.commandlogger.AdminCommandLogger</code> logger with <code>INFO</code> level, and will contain:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>name of the admin user that executed the command</p>
+</li>
+<li>
+<p>name of the command</p>
+</li>
+<li>
+<p>arguments to the command</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The name and arguments can be copied and pasted to the asadmin CLI to repeat running the same command from the command line.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -11197,6 +11379,34 @@ overwritten on the next synchronization with DAS.</p>
 </tr>
 </table>
 </div>
+</div>
+<div class="sect2">
+<h3 id="log-records"><a class="anchor" href="#log-records"></a>Log Records</h3>
+<div class="paragraph">
+<p>Because the automatic detection of caller class and method from stacktrace significantly affects
+performance of the logging system, we added the <code>org.glassfish.main.jul.classAndMethodDetection.enabled</code>
+property which affects the <code>*.printSource</code> property of formatters.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If this key is set to true, GJULE will detect the caller class and method from stacktrace,
+which is quite expensive operation affecting logging throughput.</p>
+</li>
+<li>
+<p>If it is set to false, GJULE will not perform such detection. Formatters which use <code>getSourceClassName</code>
+or <code>getSourceMethodName</code> of the record will receive <code>null</code> unless the log record has set these values explicitly.</p>
+</li>
+<li>
+<p>If the property is not set, GJULE makes the decision based on the (<code><strong>.printSource</code> property) - if
+any formatter requires this feature, the feature is enabled. Note that the <code></strong>.printSource</code> property
+must be explicitly set to true in <code>logging.properties</code>.</p>
+</li>
+<li>
+<p>It is disabled otherwise.</p>
+</li>
+</ul>
+</div>
 <div class="sect3">
 <h4 id="loggers"><a class="anchor" href="#loggers"></a>Loggers</h4>
 <div class="paragraph">
@@ -11342,7 +11552,7 @@ The buffer is reset after timeout, which means that all unprocessible log record
 <p>The last two conditions are exclusive, the date change has higher priority.</p>
 </div>
 <div class="paragraph">
-<p>The &lt;&lt;`flushFrequency`&gt;&gt; parameter affects how many log records will be formatted
+<p>The <code>flushFrequency</code> parameter affects how many log records will be formatted
 into the log file before the file is rolled out even after the file size exceeded it&#8217;s configured
 limit.</p>
 </div>
@@ -11354,10 +11564,10 @@ with a counter until it finds a name which doesn&#8217;t exist yet.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>drwxrwxr-x 14 admin admin   4096 čec 29 21:21 ../
--rw-rw-r--  1 admin admin   2521 srp  3 18:18 server.log
--rw-rw-r--  1 admin admin 191391 čec 29 21:21 server.log_2022-07-29T21-21-54
--rw-rw-r--  1 admin admin  24920 srp  3 18:18 server.log_2022-08-03T18-18-38</pre>
+<pre>drwxrwxr-x 14 admin admin   4096 jul 29 21:21 ../
+-rw-rw-r--  1 admin admin   2521 aug  3 18:18 server.log
+-rw-rw-r--  1 admin admin 191391 jul 29 21:21 server.log_2022-07-29T21-21-54
+-rw-rw-r--  1 admin admin  24920 aug  3 18:18 server.log_2022-08-03T18-18-38</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -11417,7 +11627,7 @@ with few differences:</p>
 </li>
 <li>
 <p><code>formatter</code> - a formatter class to be used for formatting log records as strings.
-Default value is &lt;&lt;`org.glassfish.main.jul.formatter.OneLineFormatter`&gt;&gt;</p>
+Default value is <a href="#OneLine"><code>org.glassfish.main.jul.formatter.OneLineFormatter</code></a></p>
 </li>
 <li>
 <p><code>formatter.*</code> - can be used for custom settings of the formatter.
@@ -11474,7 +11684,7 @@ Default is <code>UTF-8</code>.</p>
 </li>
 <li>
 <p><code>formatter</code> - a formatter class to be used for formatting log records as strings.
-Default value is &lt;&lt;`java.util.logging.SimpleFormatter`&gt;&gt;</p>
+Default value is <a href="#Simple"><code>java.util.logging.SimpleFormatter</code></a></p>
 </li>
 <li>
 <p><code>host</code> - a host name or IP address used of the UDP endpoint.
@@ -22979,11 +23189,9 @@ existing virtual servers.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>asadmin&gt; list-virtual-servers
-sampleListener
-admin-listener
-http-listener-2
-http-listener-1
-Command list-http-listeners executed successfully.</code></pre>
+server
+__asadmin
+Command list-virtual-servers executed successfully.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -29393,10 +29601,8 @@ Administration Console are contained in the Administration Console
 online help.</p>
 </div>
 <div class="paragraph">
-<p>For more information about the Java Transaction API (JTA) and Java
-Transaction Service (JTS), see the following sites:
-<code><a href="http://www.oracle.com/technetwork/java/javaee/tech/jta-138684.html" class="bare">http://www.oracle.com/technetwork/java/javaee/tech/jta-138684.html</a></code> and
-<code><a href="http://www.oracle.com/technetwork/java/javaee/tech/jts-140022.html" class="bare">http://www.oracle.com/technetwork/java/javaee/tech/jts-140022.html</a></code>.</p>
+<p>For more information about the Java Transaction API (JTA) see the following site:
+<code><a href="https://jakarta.ee/specifications/transactions/" class="bare">https://jakarta.ee/specifications/transactions/</a></code>.</p>
 </div>
 <div class="paragraph">
 <p>You might also want to read
@@ -32413,7 +32619,7 @@ Resource That Provides Class Loader Statistics</a></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-10 11:20:02 +0200
+Last updated 2024-08-12 02:38:18 +0200
 </div>
 </div>
 </body>

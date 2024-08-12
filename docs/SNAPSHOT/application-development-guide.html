@@ -159,11 +159,6 @@
 <li><a href="#deploying-a-web-service">Deploying a Web Service</a></li>
 <li><a href="#the-web-service-uri-wsdl-file-and-test-page">The Web Service URI, WSDL File, and Test Page</a></li>
 <li><a href="#the-databinding-provider">The Databinding Provider</a></li>
-<li><a href="#glassfish-java-ee-service-engine">GlassFish Jakarta EE Service Engine</a>
-<ul class="sectlevel3">
-<li><a href="#using-the-jbi-xml-file">Using the <code>jbi.xml</code> File</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="#configuring-the-java-persistence-provider">6 Configuring the Java Persistence Provider</a>
@@ -557,7 +552,7 @@
 <p>Release 7</p>
 </div>
 <div class="paragraph">
-<p>Contributed 2018 - 2022</p>
+<p>Contributed 2018 - 2024</p>
 </div>
 <div class="paragraph">
 <p>This Application Development Guide describes how to create and run Java
@@ -2959,7 +2954,7 @@ when you first install the Eclipse GlassFish.</p>
 <p>In the JDBC realm, the server gets user credentials from a database. The
 Eclipse GlassFish uses the database information and the enabled JDBC
 realm option in the configuration file. For digest authentication, a
-JDBC realm should be created with <code>jdbcDigestRealm</code> as the JAAS context.</p>
+JDBC realm should be created with <code>digestRealm</code> as the JAAS context.</p>
 </div>
 </li>
 <li>
@@ -3068,9 +3063,9 @@ Loaders</a>.</p>
 access controls upon users. JAAS provides a pluggable and extensible
 framework for programmatic user authentication and authorization. JAAS
 is a core API and an underlying technology for Jakarta EE security
-mechanisms. For more information about JAAS, refer to the JAAS
-specification for Java SDK, available at
-<code><a href="http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136007.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136007.html</a></code>.</p>
+mechanisms. For more information about JAAS, refer to the specification,
+available at <code><a href="https://jakarta.ee/specifications/authentication/" class="bare">https://jakarta.ee/specifications/authentication/</a></code> and
+<code><a href="https://jakarta.ee/specifications/authorization/" class="bare">https://jakarta.ee/specifications/authorization/</a></code>.</p>
 </div>
 <div class="paragraph">
 <p>For general information about realms and login modules, see the section
@@ -4579,9 +4574,9 @@ of this section, this directory is referred to as simply app-dir.</p>
 <ol class="arabic">
 <li>
 <p>Go to the
-<a href="http://www.oracle.com/technetwork/java/javaee/download-141771.html">J2EE
+<a href="https://www.oracle.com/java/technologies/java-archive-eesdk-downloads.html">J2EE
 1.4 download URL</a>
-(<code><a href="http://www.oracle.com/technetwork/java/javaee/download-141771.html" class="bare">http://www.oracle.com/technetwork/java/javaee/download-141771.html</a></code>)
+(<code><a href="https://www.oracle.com/java/technologies/java-archive-eesdk-downloads.html" class="bare">https://www.oracle.com/java/technologies/java-archive-eesdk-downloads.html</a></code>)
 in your browser.</p>
 </li>
 <li>
@@ -5808,9 +5803,6 @@ The following topics are addressed here:</p>
 <li>
 <p><a href="#the-databinding-provider">The Databinding Provider</a></p>
 </li>
-<li>
-<p><a href="#glassfish-java-ee-service-engine">GlassFish Jakarta EE Service Engine</a></p>
-</li>
 </ul>
 </div>
 <div class="admonitionblock note">
@@ -6108,101 +6100,6 @@ compiler files are located here:</p>
 <div class="content">
 <pre class="CodeRay highlight"><code>bin/jaxb-compiler.cmd
 bin/jaxb-compiler.sh</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="glassfish-java-ee-service-engine"><a class="anchor" href="#glassfish-java-ee-service-engine"></a>GlassFish Jakarta EE Service Engine</h3>
-<div class="paragraph">
-<p>Eclipse GlassFish 7 provides the GlassFish Jakarta EE Service Engine, a
-JSR 208 compliant Java Business Integration (JBI) runtime component that
-connects Jakarta EE web services to JBI components. The Jakarta EE Service
-Engine is installed as an add-on component using the Update Tool. Look
-for the JBI component named Jakarta EE Service Engine. A JBI runtime is not
-installed with or integrated into Eclipse GlassFish 7 and must be
-obtained separately. For more information about using the Update Tool to
-obtain the Jakarta EE Service Engine and other add-on components, see
-"<a href="administration-guide.html#GSADG00701">Update Tool</a>" in Eclipse GlassFish
-Administration Guide.</p>
-</div>
-<div class="paragraph">
-<p>The Jakarta EE Service Engine acts as a bridge between the Jakarta EE and JBI
-runtime environments for web service providers and web service
-consumers. The Jakarta EE Service Engine provides better performance than a
-SOAP over HTTP binding component due to in-process communication between
-components and additional protocols provided by JBI binding components
-such as JMS, SMTP, and File.</p>
-</div>
-<div class="paragraph">
-<p>The <a href="http://jcp.org/en/jsr/detail?id=208">JSR 208</a>
-(<code><a href="http://jcp.org/en/jsr/detail?id=208" class="bare">http://jcp.org/en/jsr/detail?id=208</a></code>) specification allows
-transactions to be propagated to other components using a message
-exchange property specified in the <code>JTA_TRANSACTION_PROPERTY_NAME</code>
-field. The Jakarta EE Service Engine uses this property to set and get a
-transaction object from the JBI message exchange. It then uses the
-transaction object to take part in a transaction. This means a Jakarta EE
-application or module can take part in a transaction started by a JBI
-application. Conversely, a JBI application can take part in a
-transaction started by a Jakarta EE application or module.</p>
-</div>
-<div class="paragraph">
-<p>Similarly, the JSR 208 specification allows a security subject to be
-propagated as a message exchange property named
-<code>javax.jbi.security.subject</code>. Thus a security subject can be propagated
-from a Jakarta EE application or module to a JBI application or the
-reverse.</p>
-</div>
-<div class="paragraph">
-<p>To deploy a Jakarta EE application or module as a JBI service unit, use the
-<code>asadmin deploy</code> command, or autodeployment. For more information about
-the <code>asadmin deploy</code> command, see the <a href="reference-manual.html#GSRFM">
-Eclipse GlassFish Reference Manual</a>.
-For more information about autodeployment, see
-"<a href="application-deployment-guide.html#to-deploy-an-application-or-module-automatically">
-To Deploy an Application or Module Automatically</a>"
-in Eclipse GlassFish Application Deployment Guide.</p>
-</div>
-<div class="paragraph">
-<p><a id="GSDVG00387"></a><a id="using-the-jbi.xml-file"></a></p>
-</div>
-<div class="sect3">
-<h4 id="using-the-jbi-xml-file"><a class="anchor" href="#using-the-jbi-xml-file"></a>Using the <code>jbi.xml</code> File</h4>
-<div class="paragraph">
-<p>Section 6.3.1 of the JSR 208 specification describes the <code>jbi.xml</code> file.
-This is a deployment descriptor, located in the <code>META-INF</code> directory. To
-deploy a Jakarta EE application or module as a JBI service unit, you need
-only specify a small subset of elements in the <code>jbi.xml</code> file. Here is
-an example provider:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</span>
-<span class="tag">&lt;jbi</span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://java.sun.com/xml/ns/jbi</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns:ns0</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://ejbws.jbi.misc/</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-  <span class="tag">&lt;services</span> <span class="attribute-name">binding-component</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;provides</span> <span class="attribute-name">endpoint-name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MiscPort</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">interface-name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ns0:Misc</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">service-name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ns0:MiscService</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-  <span class="tag">&lt;/services&gt;</span>
-<span class="tag">&lt;/jbi&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Here is an example consumer:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;</span>
-<span class="tag">&lt;jbi</span> <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://java.sun.com/xml/ns/jbi</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">xmlns:ns0</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://message.hello.jbi/</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-  <span class="tag">&lt;services</span> <span class="attribute-name">binding-component</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;consumes</span> <span class="attribute-name">endpoint-name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MsgPort</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">interface-name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ns0:Msg</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">service-name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">ns0:MsgService</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-  <span class="tag">&lt;/services&gt;</span>
-<span class="tag">&lt;/jbi&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The Jakarta EE Service Engine enables the endpoints described in the
-<code>provides</code> section of the <code>jbi.xml</code> file in the JBI runtime. Similarly,
-the Jakarta EE Service Engine routes invocations of the endpoints described
-in the <code>consumes</code> section from the Jakarta EE web service consumer to the
-JBI runtime.</p>
 </div>
 </div>
 </div>
@@ -7311,7 +7208,7 @@ modification or recompilation.</p>
 <div class="paragraph">
 <p>To develop servlets, use the Java Servlet API. For information about
 using the Java Servlet API, see the documentation at
-<code><a href="http://www.oracle.com/technetwork/java/javaee/servlet/index.html" class="bare">http://www.oracle.com/technetwork/java/javaee/servlet/index.html</a></code>.</p>
+<code><a href="https://jakarta.ee/specifications/servlet/" class="bare">https://jakarta.ee/specifications/servlet/</a></code>.</p>
 </div>
 <div class="paragraph">
 <p>The Eclipse GlassFish provides the <code>wscompile</code> and <code>wsdeploy</code> tools to
@@ -7680,11 +7577,7 @@ servers</p>
 </div>
 <div class="paragraph">
 <p>For information about creating JSP files, see the JavaServer Pages web
-site at <code><a href="http://www.oracle.com/technetwork/java/javaee/jsp/index.html" class="bare">http://www.oracle.com/technetwork/java/javaee/jsp/index.html</a></code>.</p>
-</div>
-<div class="paragraph">
-<p>For information about Java Beans, see the JavaBeans web page at
-<code><a href="http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html</a></code>.</p>
+site at <code><a href="https://jakarta.ee/specifications/pages/" class="bare">https://jakarta.ee/specifications/pages/</a></code>.</p>
 </div>
 <div class="paragraph">
 <p>This section describes how to use JavaServer Pages (JSP files) as page
@@ -7711,7 +7604,7 @@ templates in a Eclipse GlassFish web application.</p>
 <div class="paragraph">
 <p>Eclipse GlassFish supports tag libraries and standard portable tags. For
 more information, see the JavaServer Pages Standard Tag Library (JSTL)
-page at <code><a href="http://www.oracle.com/technetwork/java/index-jsp-135995.html" class="bare">http://www.oracle.com/technetwork/java/index-jsp-135995.html</a></code>.</p>
+page at <code><a href="https://jakarta.ee/specifications/tags/" class="bare">https://jakarta.ee/specifications/tags/</a></code>.</p>
 </div>
 <div class="paragraph">
 <p>Web applications don&#8217;t need to bundle copies of the <code>jsf-impl.jar</code> or
@@ -14492,9 +14385,7 @@ Application Client Using the <code>appclient</code> Script</a>.</p>
 <h4 id="using-java-web-start"><a class="anchor" href="#using-java-web-start"></a>Using Java Web Start</h4>
 <div class="paragraph">
 <p>Java Web Start allows your application client to be easily launched and
-automatically downloaded and updated. General information about Java Web
-Start is available at
-<code><a href="http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136112.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136112.html</a></code>.</p>
+automatically downloaded and updated.</p>
 </div>
 <div class="paragraph">
 <p>The following topics are addressed here:</p>
@@ -17911,11 +17802,11 @@ and EJB components using the Eclipse GlassFish.</p>
 </div>
 <div class="paragraph">
 <p>The JDBC specifications are available at
-<code><a href="http://www.oracle.com/technetwork/java/javase/jdbc/index.html" class="bare">http://www.oracle.com/technetwork/java/javase/jdbc/index.html</a></code>.</p>
+<code><a href="https://www.oracle.com/java/technologies/javase/javase-tech-database.html" class="bare">https://www.oracle.com/java/technologies/javase/javase-tech-database.html</a></code>.</p>
 </div>
 <div class="paragraph">
 <p>A useful JDBC tutorial is located at
-<code><a href="http://docs.oracle.com/javase/tutorial/jdbc/index.html" class="bare">http://docs.oracle.com/javase/tutorial/jdbc/index.html</a></code>.</p>
+<code><a href="https://docs.oracle.com/javase/tutorial/jdbc/index.html" class="bare">https://docs.oracle.com/javase/tutorial/jdbc/index.html</a></code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -18865,12 +18756,9 @@ Registry, and <code>UserTransaction</code></a></p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information about the Java Transaction API (JTA) and Java
-Transaction Service (JTS), see "<a href="administration-guide.html#administering-transactions">Administering
-Transactions</a>" in Eclipse GlassFish Administration
-Guide and the following sites:
-<code><a href="http://www.oracle.com/technetwork/java/javaee/jta/index.html" class="bare">http://www.oracle.com/technetwork/java/javaee/jta/index.html</a></code> and
-<code><a href="http://www.oracle.com/technetwork/java/javaee/tech/index.html" class="bare">http://www.oracle.com/technetwork/java/javaee/tech/index.html</a></code>.</p>
+<p>For more information about the Java Transaction API (JTA), see "<a href="administration-guide.html#administering-transactions">Administering Transactions</a>" in Eclipse GlassFish Administration
+Guide and the following site:
+<code><a href="https://jakarta.ee/specifications/transactions/" class="bare">https://jakarta.ee/specifications/transactions/</a></code>.</p>
 </div>
 <div class="paragraph">
 <p>You might also want to read
@@ -19367,8 +19255,8 @@ objects. The Jakarta EE naming service is based on the Java Naming and
 Directory Interface (JNDI) API. The JNDI API allows application
 components and clients to look up distributed resources, services, and
 EJB components. For general information about the JNDI API, see
-<code><a href="http://www.oracle.com/technetwork/java/jndi/index.html" class="bare">http://www.oracle.com/technetwork/java/jndi/index.html</a></code>. You can also
-see the JNDI tutorial at <code><a href="http://docs.oracle.com/javase/jndi/tutorial/" class="bare">http://docs.oracle.com/javase/jndi/tutorial/</a></code>.</p>
+<code><a href="https://docs.oracle.com/javase/tutorial/jndi/overview/index.html" class="bare">https://docs.oracle.com/javase/tutorial/jndi/overview/index.html</a></code>. You can also
+see the JNDI tutorial at <code><a href="https://docs.oracle.com/javase/jndi/tutorial/" class="bare">https://docs.oracle.com/javase/jndi/tutorial/</a></code>.</p>
 </div>
 <div class="paragraph">
 <p>The following topics are addressed here:</p>
@@ -20761,7 +20649,7 @@ deployment descriptor file. For details, see
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-10 11:20:02 +0200
+Last updated 2024-08-12 02:38:18 +0200
 </div>
 </div>
 </body>

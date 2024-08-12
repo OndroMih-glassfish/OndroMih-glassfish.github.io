@@ -976,7 +976,13 @@
 <li><a href="#create-service">create-service</a>
 <ul class="sectlevel2">
 <li><a href="#synopsis-64">Synopsis</a></li>
-<li><a href="#description-64">Description</a></li>
+<li><a href="#description-64">Description</a>
+<ul class="sectlevel3">
+<li><a href="#behavior-of-create-service-on-windows-systems">Behavior of <code>create-service</code> on Windows Systems</a></li>
+<li><a href="#behavior-of-create-service-on-linux-systems">Behavior of <code>create-service</code> on Linux Systems</a></li>
+<li><a href="#behavior-of-create-service-on-oracle-solaris-systems">Behavior of <code>create-service</code> on Oracle Solaris Systems</a></li>
+</ul>
+</li>
 <li><a href="#options-64">Options</a></li>
 <li><a href="#operands-61">Operands</a></li>
 <li><a href="#examples-60">Examples</a>
@@ -4513,7 +4519,7 @@
 <p>Release 7</p>
 </div>
 <div class="paragraph">
-<p>Contributed 2018 - 2022</p>
+<p>Contributed 2018 - 2024</p>
 </div>
 <div class="paragraph">
 <p>This reference manual describes administration commands and utility
@@ -6738,7 +6744,7 @@ requires superuser privileges.</p>
 <dd>
 <p>This property specifies the port number of the port that is used for
 connections to the Java Platform Debugger Architecture (JPDA)
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugger. Valid values are 1-65535. On UNIX, creating sockets that
 listen on ports 1-1024 requires superuser privileges.</p>
 </dd>
@@ -7461,7 +7467,7 @@ default value.</p>
 <p>Java class which implements this realm. These include
 <code>com.sun.enterprise.security.auth.realm.file.FileRealm</code>,
 <code>com.sun.enterprise.security.auth.realm.certificate.CertificateRealm</code>,
-<code>com.sun.enterprise.security.auth.realm.jdbc.JDBCRealm</code>,
+<code>com.sun.enterprise.security.ee.authentication.glassfish.jdbc.JDBCRealm</code>,
 <code>com.sun.enterprise.security.auth.realm.ldap.LDAPRealm</code>,
 <code>com.sun.enterprise.security.auth.realm.ldap.PamRealm</code>, and
 <code>com.sun.enterprise.security.auth.realm.solaris.SolarisRealm</code>, or a
@@ -7958,7 +7964,7 @@ requires superuser privileges.</p>
 connections to the
 <a href="http://java.sun.com/javase/technologies/core/toolsapis/jpda/">Java
 Platform Debugger Architecture (JPDA)</a>
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugger. Valid values are 1-65535. On UNIX, creating sockets that
 listen on ports 1-1024 requires superuser privileges.</p>
 </dd>
@@ -8485,7 +8491,7 @@ Administration Guide</p>
 <p>Apache Felix Remote Shell
 (<a href="http://felix.apache.org/site/apache-felix-remote-shell.html" class="bare">http://felix.apache.org/site/apache-felix-remote-shell.html</a>), Java
 Platform Debugger Architecture (JPDA)
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)</p>
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)</p>
 </div>
 </div>
 </div>
@@ -9977,7 +9983,7 @@ privileges.</p>
 connections to the
 <a href="http://java.sun.com/javase/technologies/core/toolsapis/jpda/">Java
 Platform Debugger Architecture (JPDA)</a>
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugger. Valid values are 1-65535. On UNIX, creating sockets that
 listen on ports 1-1024 requires superuser privileges.</p>
 </dd>
@@ -10260,7 +10266,7 @@ Command create-domain executed successfully.</code></pre>
 <p>Apache Felix Remote Shell
 (<code><a href="http://felix.apache.org/site/apache-felix-remote-shell.html" class="bare">http://felix.apache.org/site/apache-felix-remote-shell.html</a></code>), Java
 Platform Debugger Architecture (JPDA)
-(<code><a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a></code>)</p>
+(<code><a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a></code>)</p>
 </div>
 </div>
 </div>
@@ -10478,7 +10484,7 @@ sends to the client. This affects URLs the server automatically
 generates; it doesn&#8217;t affect the URLs for directories and files stored
 in the server. This name should be the alias name if your server uses
 an alias. If a colon and port number are appended, that port will be
-used in URLs that the server sends to the client.</p>
+used in URLs that the server sends to the client. If a scheme and :// are prepended, the scheme will be used in the URLs.</p>
 </dd>
 <dt class="hdlist1"><code>--target</code></dt>
 <dd>
@@ -11510,7 +11516,7 @@ sends to the client. This affects URLs the server automatically
 generates; it doesn&#8217;t affect the URLs for directories and files stored
 in the server. This name should be the alias name if your server uses
 an alias. If a colon and port number are appended, that port will be
-used in URLs that the server sends to the client.</p>
+used in URLs that the server sends to the client. If a scheme and :// are prepended, the scheme will be used in the URLs.</p>
 </dd>
 <dt class="hdlist1"><code>--acceptorthreads</code></dt>
 <dd>
@@ -12232,7 +12238,7 @@ requires superuser privileges.</p>
 <dd>
 <p>This property specifies the port number of the port that is used for
 connections to the Java Platform Debugger Architecture (JPDA)
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugger. Valid values are 1-65535. On UNIX, creating sockets that
 listen on ports 1-1024 requires superuser privileges.</p>
 </dd>
@@ -15394,7 +15400,7 @@ requires superuser privileges.</p>
 <dd>
 <p>This property specifies the port number of the port that is used for
 connections to the Java Platform Debugger Architecture (JPDA)
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugger. Valid values are 1-65535. On UNIX, creating sockets that
 listen on ports 1-1024 requires superuser privileges.</p>
 </dd>
@@ -18859,14 +18865,13 @@ operand is a DAS or an instance.</p>
 <div class="paragraph">
 <p>This subcommand is supported in local mode only.</p>
 </div>
-<div class="paragraph">
-<p>Behavior of <code>create-service</code> on Windows Systems</p>
-</div>
+<div class="sect3">
+<h4 id="behavior-of-create-service-on-windows-systems"><a class="anchor" href="#behavior-of-create-service-on-windows-systems"></a>Behavior of <code>create-service</code> on Windows Systems</h4>
 <div class="paragraph">
 <p>On Windows systems, the <code>create-service</code> subcommand creates a Windows
 service to represent the DAS or instance. The service is created in the
-disabled state. After this subcommand creates the service, you must use
-the Windows Services Manager or the Windows Services Wrapper to start,
+<strong>automatic</strong> state. After this subcommand creates the service, you must
+use the Windows Services Manager or the Windows Services Wrapper to start,
 stop, uninstall, or install the service.</p>
 </div>
 <div class="paragraph">
@@ -18875,7 +18880,7 @@ administrator user.</p>
 </div>
 <div class="paragraph">
 <p>The subcommand creates the following Windows Services Wrapper files for
-the service in the domain-dir`\bin` directory or the instance-dir<code>\bin</code>
+the service in the domain-dir<code>\bin</code> directory or the instance-dir<code>\bin</code>
 directory:</p>
 </div>
 <div class="ulist">
@@ -18890,12 +18895,12 @@ directory:</p>
 </div>
 <div class="paragraph">
 <p>On Windows systems, this subcommand requires the
-<a href="http://www.microsoft.com/net/">Microsoft .NET Framework</a>
-(<a href="http://www.microsoft.com/net/" class="bare">http://www.microsoft.com/net/</a>). Otherwise, the subcommand fails.</p>
+<a href="https://dotnet.microsoft.com/">Microsoft .NET Framework</a> 4.6.1 or later
+(<a href="https://dotnet.microsoft.com/" class="bare">https://dotnet.microsoft.com/</a>). Otherwise, the subcommand fails.</p>
 </div>
-<div class="paragraph">
-<p>Behavior of <code>create-service</code> on Linux Systems</p>
 </div>
+<div class="sect3">
+<h4 id="behavior-of-create-service-on-linux-systems"><a class="anchor" href="#behavior-of-create-service-on-linux-systems"></a>Behavior of <code>create-service</code> on Linux Systems</h4>
 <div class="paragraph">
 <p>On Linux systems, the <code>create-service</code> subcommand creates a
 System-V-style initialization script
@@ -18907,9 +18912,9 @@ the domain or instance.</p>
 <div class="paragraph">
 <p>On Linux systems, this subcommand must be run as the OS-level root user.</p>
 </div>
-<div class="paragraph">
-<p>Behavior of <code>create-service</code> on Oracle Solaris Systems</p>
 </div>
+<div class="sect3">
+<h4 id="behavior-of-create-service-on-oracle-solaris-systems"><a class="anchor" href="#behavior-of-create-service-on-oracle-solaris-systems"></a>Behavior of <code>create-service</code> on Oracle Solaris Systems</h4>
 <div class="paragraph">
 <p>On Oracle Solaris systems, the <code>create-service</code> subcommand creates a
 Service Management Facility (SMF) service to represent the DAS or
@@ -18986,6 +18991,7 @@ subcommand, you must delete the directory that contains the manifest
 file and the entire contents of the directory. Otherwise, an attempt to
 re-create the service by using the <code>create-service</code> subcommand fails.
 The Oracle Solaris command <code>svccfg</code> does not delete this directory.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -19099,25 +19105,29 @@ is running Windows.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>asadmin&gt; create-service
-Found the Windows Service and successfully uninstalled it.
 The Windows Service was created successfully.  It is ready to be started.  Here are
 the details:
 ID of the service: domain1
 Display Name of the service:domain1 Eclipse GlassFish
-Domain Directory: C:\glassfish7\glassfish\domains\domain1
+Server Directory: C:\glassfish7\glassfish\domains\domain1
 Configuration file for Windows Services Wrapper: C:\glassfish7\glassfish\domains\
 domain1\bin\domain1Service.xml
 The service can be controlled using the Windows Services Manager or you can use the
 Windows Services Wrapper instead:
 Start Command:  C:\glassfish7\glassfish\domains\domain1\bin\domain1Service.exe  start
 Stop Command:   C:\glassfish7\glassfish\domains\domain1\bin\domain1Service.exe  stop
+Restart Command:  C:\glassfish7\glassfish\domains\domain1\bin\domain1Service.exe
+restart
 Uninstall Command:  C:\glassfish7\glassfish\domains\domain1\bin\domain1Service.exe
 uninstall
 Install Command:  C:\glassfish7\glassfish\domains\domain1\bin\domain1Service.exe
 install
-
-This message is also available in a file named PlatformServices.log in the domain's
-root directory
+Status Command: C:\glassfish7\glassfish\domains\domain1\bin\domain1Service.exe status
+You can also verify that the service is installed (or not) with sc query state= all
+windows.services.uninstall.good=Found the Windows Service and successfully uninstall
+it.
+For your convenience this message has also been saved to this file:
+C:\glassfish7\glassfish\domains\domain1\PlatformServices.log
 Command create-service executed successfully.</code></pre>
 </div>
 </div>
@@ -19215,7 +19225,7 @@ Administration,
 Services (Tasks)</a>" in System Administration Guide: Basic Administration</p>
 </div>
 <div class="paragraph">
-<p>Microsoft .NET Framework (<code><a href="http://www.microsoft.com/net/" class="bare">http://www.microsoft.com/net/</a></code>)</p>
+<p>Microsoft .NET Framework (<code><a href="https://dotnet.microsoft.com/" class="bare">https://dotnet.microsoft.com/</a></code>)</p>
 </div>
 </div>
 </div>
@@ -46938,7 +46948,7 @@ options, see the <a href="#asadmin"><code>asadmin</code>(1M)</a> help page.</p>
 <p>Specifies whether the domain is restarted with
 <a href="http://java.sun.com/javase/technologies/core/toolsapis/jpda/">Java
 Platform Debugger Architecture (JPDA)</a>
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugging enabled.
 Possible values are as follows:</p>
 <div class="dlist">
@@ -47063,7 +47073,7 @@ Command restart-domain executed successfully.</code></pre>
 </div>
 <div class="paragraph">
 <p>Java Platform Debugger Architecture (JPDA)
-(<code><a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a></code>)</p>
+(<code><a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a></code>)</p>
 </div>
 </div>
 </div>
@@ -47178,7 +47188,7 @@ options, see the <a href="#asadmin"><code>asadmin</code>(1M)</a> help page.</p>
 <p>Specifies whether the instance is restarted with
 <a href="http://java.sun.com/javase/technologies/core/toolsapis/jpda/">Java
 Platform Debugger Architecture
-(JPDA)</a>(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(JPDA)</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugging enabled. Possible values are as follows:</p>
 <div class="dlist">
 <dl>
@@ -47265,7 +47275,7 @@ Command restart-instance executed successfully.</code></pre>
 </div>
 <div class="paragraph">
 <p>Java Platform Debugger Architecture (JPDA)
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)</p>
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)</p>
 </div>
 </div>
 </div>
@@ -47385,7 +47395,7 @@ contains only one node directory. Otherwise, this option is required.</p>
 <p>Specifies whether the instance is restarted with
 <a href="http://java.sun.com/javase/technologies/core/toolsapis/jpda/">Java
 Platform Debugger Architecture (JPDA)</a>
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugging enabled.
 Possible values are as follows:</p>
 <div class="dlist">
@@ -47509,7 +47519,7 @@ Command restart-local-instance executed successfully.</code></pre>
 </div>
 <div class="paragraph">
 <p>Java Platform Debugger Architecture (JPDA)
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)</p>
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)</p>
 </div>
 </div>
 </div>
@@ -47908,21 +47918,20 @@ Command rotate-log executed successfully.</code></pre>
 <h2 id="set"><a class="anchor" href="#set"></a>set</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Sets the values of configurable attributes</p>
+<p>Sets or deletes the values of configurable attributes</p>
 </div>
 <div class="sect2">
 <h3 id="synopsis-247"><a class="anchor" href="#synopsis-247"></a>Synopsis</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>asadmin [asadmin-options] set [--help]
-attribute-name=value</code></pre>
+<pre class="CodeRay highlight"><code>asadmin [asadmin-options] set [--help] attribute-name=value [attribute-name=value]</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="description-248"><a class="anchor" href="#description-248"></a>Description</h3>
 <div class="paragraph">
-<p>The <code>set</code> subcommand uses dotted names to modify the values of one or
+<p>The <code>set</code> subcommand uses dotted names to modify or delete the values of one or
 more configurable attributes.</p>
 </div>
 <div class="paragraph">
@@ -47990,9 +47999,11 @@ options, see the <a href="#asadmin"><code>asadmin</code>(1M)</a> help page.</p>
 <h3 id="operands-216"><a class="anchor" href="#operands-216"></a>Operands</h3>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">attribute-name=value</dt>
+<dt class="hdlist1">attribute-name=value [attribute-name=value]</dt>
 <dd>
-<p>Identifies the full dotted name of the attribute name and its value.</p>
+<p>Identifies the full dotted name of the attribute name and its value.
+Multiple attribute=value pairs can be provided as multiple arguments, separated by a space.
+To delete a value, set the value to an empty value, e.g. <code>attribute-name=</code></p>
 </dd>
 </dl>
 </div>
@@ -48015,11 +48026,11 @@ Command set executed successfully.</code></pre>
 <div class="sect3">
 <h4 id="sthref2030"><a class="anchor" href="#sthref2030"></a>Example 2   Enabling the Monitoring Service for a Monitorable Object</h4>
 <div class="paragraph">
-<p>This example enables monitoring for the JVM.</p>
+<p>This example enables monitoring for the JVM and Thread-Pool modules.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>asadmin&gt; set server.monitoring-service.module-monitoring-levels.jvm=HIGH
+<pre class="CodeRay highlight"><code>asadmin&gt; set server.monitoring-service.module-monitoring-levels.jvm=HIGH server.monitoring-service.module-monitoring-levels.thread-pool=HIGH
 Command set executed successfully.</code></pre>
 </div>
 </div>
@@ -50555,7 +50566,7 @@ options, see the <a href="#asadmin"><code>asadmin</code>(1M)</a> help page.</p>
 <p>Specifies whether the instance is started with
 <a href="http://java.sun.com/javase/technologies/core/toolsapis/jpda/">Java
 Platform Debugger Architecture (JPDA)</a>
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugging enabled.<br>
 Possible values are as follows:</p>
 <div class="dlist">
@@ -50723,7 +50734,7 @@ Command start-instance executed successfully.</code></pre>
 </div>
 <div class="paragraph">
 <p>Java Platform Debugger Architecture (JPDA)
-(<code><a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a></code>)</p>
+(<code><a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a></code>)</p>
 </div>
 </div>
 </div>
@@ -50808,7 +50819,7 @@ contains only one node directory. Otherwise, this option is required.</p>
 <p>Specifies whether the instance is started with
 <a href="http://java.sun.com/javase/technologies/core/toolsapis/jpda/">Java
 Platform Debugger Architecture (JPDA)</a>
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)
 debugging enabled.</p>
 <div class="paragraph">
 <p>Possible values are as follows:</p>
@@ -51043,7 +51054,7 @@ Command start-local-instance executed successfully.</code></pre>
 </div>
 <div class="paragraph">
 <p>Java Platform Debugger Architecture (JPDA)
-(<a href="http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html" class="bare">http://www.oracle.com/technetwork/java/javase/tech/jpda-141715.html</a>)</p>
+(<a href="https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html" class="bare">https://docs.oracle.com/en/java/javase/17/docs/specs/jpda/jpda.html</a>)</p>
 </div>
 </div>
 </div>
@@ -57617,7 +57628,7 @@ run safely, without potential risk to systems or users.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-10 11:20:03 +0200
+Last updated 2024-08-12 02:38:18 +0200
 </div>
 </div>
 </body>
