@@ -1,0 +1,627 @@
+<!--
+    Copyright (c) 2023 Contributors to the Eclipse Foundation
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Public License v. 2.0, which is available at
+    http://www.eclipse.org/legal/epl-2.0.
+
+    This Source Code may also be made available under the following Secondary
+    Licenses when the conditions for such availability set forth in the
+    Eclipse Public License v. 2.0 are satisfied: GNU General Public License,
+    version 2 with the GNU Classpath Exception, which is available at
+    https://www.gnu.org/software/classpath/license.html.
+
+    SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://www.eclipse.org/favicon.ico" rel='icon' type='image/x-icon'/>
+    <!-- Links and stylesheets -->
+    <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/quicksilver.min.css?v0.0.211">
+    <link rel="stylesheet" href="/assets/css/style.css?v=eb639293475e7d5bfa071c1db3105f5870757e5f">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" type="text/css"/>
+    <title>Eclipse GlassFish</title>
+      <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5WLCZXC');</script>
+  <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <a class=sr-only href=#content>Skip to main content</a>
+<header class="header-wrapper header-default-bg-img" id=header-wrapper>
+  <div class="clearfix toolbar-container-wrapper">
+    <div class=container>
+      <div class="text-right toolbar-row row hidden-print">
+        <div class="col-md-24 row-toolbar-col">
+          <ul class=list-inline>
+            <li><a href=https://accounts.eclipse.org/user/edit data-tab-destination=tab-profile><i class="fa fa-edit fa-fw"></i>Edit my account</a></li>
+            <li><a class="toolbar-link toolbar-manage-cookies dropdown-toggle"><i class="fa fa-wrench"></i>Manage Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=navbar-wrapper>
+    <div class=container>
+      <div class=row id=header-row>
+        <div class="col-sm-5 col-md-4" id=header-left>
+          <div class=wrapper-logo-default><a title="Hugo Solstice Theme" href=https://www.eclipse.org><img width=140 class="logo-eclipse-default img-responsive hidden-xs" src=https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg alt="Hugo Solstice Theme"></a></div>
+        </div>
+        <div class="col-sm-19 col-md-20 margin-top-10" id=main-menu-wrapper>
+          <div class="float-right hidden-xs" id=btn-call-for-action>
+            
+            <div id=btn-call-for-action><a href="/download" class="btn btn-huge btn-warning"><i class="fa fa-download"></i>Download</a></div>
+            
+          </div>
+          <div class="navbar float-sm-right yamm" id=main-menu>
+            <div class="navbar-collapse collapse reset float-right" id=navbar-main-menu>
+              <ul class="nav navbar-nav">
+                <li><a href="https://www.eclipse.org/projects/" target="_self">Projects</a></li>
+<li><a href="https://www.eclipse.org/org/workinggroups/" target="_self">Working Groups</a></li>
+<li><a href="https://www.eclipse.org/membership/" target="_self">Members</a></li>
+<li class="dropdown visible-xs">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Community <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li><a href="http://marketplace.eclipse.org">Marketplace</a></li>
+    <li><a href="http://events.eclipse.org">Events</a></li>
+    <li><a href="http://www.planeteclipse.org/">Planet Eclipse</a></li>
+    <li><a href="https://www.eclipse.org/community/eclipse_newsletter/">Newsletter</a></li>
+    <li><a href="https://www.youtube.com/user/EclipseFdn">Videos</a></li>
+    <li><a href="https://blogs.eclipse.org">Blogs</a></li>
+  </ul>
+</li>
+<li class="dropdown visible-xs">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Participate <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li>
+    <li><a href="https://www.eclipse.org/forums/">Forums</a></li>
+    <li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li>
+    <li><a href="https://wiki.eclipse.org/">Wiki</a></li>
+    <li><a href="https://wiki.eclipse.org/IRC">IRC</a></li>
+    <li><a href="https://www.eclipse.org/org/research/">Research</a></li>
+  </ul>
+</li>
+<li class="dropdown visible-xs">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Eclipse IDE <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li><a href="https://www.eclipse.org/downloads">Download</a></li>
+    <li><a href="https://www.eclipse.org/eclipseide">Learn More</a></li>
+    <li><a href="https://help.eclipse.org">Documentation</a></li>
+    <li><a href="https://www.eclipse.org/getting_started">Getting Started / Support</a></li>
+    <li><a href="https://www.eclipse.org/contribute/">How to Contribute</a></li>
+    <li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li>
+    <li><a href="https://www.eclipse.org/forums/index.php/f/89/">Newcomer Forum</a></li>
+  </ul>
+</li>
+<!-- More -->
+<li class="dropdown eclipse-more hidden-xs">
+  <a data-toggle="dropdown" class="dropdown-toggle" role="button">More<b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <div class="yamm-content">
+        <div class="row">
+          <ul class="col-sm-8 list-unstyled">
+            <li>
+              <p>
+                <strong>Community</strong>
+              </p>
+            </li>
+            <li>
+              <a href="http://marketplace.eclipse.org">Marketplace</a>
+            </li>
+            <li>
+              <a href="http://events.eclipse.org">Events</a>
+            </li>
+            <li>
+              <a href="http://www.planeteclipse.org/">Planet Eclipse</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/community/eclipse_newsletter/">Newsletter</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/user/EclipseFdn">Videos</a>
+            </li>
+            <li>
+              <a href="https://blogs.eclipse.org">Blogs</a>
+            </li>
+          </ul>
+          <ul class="col-sm-8 list-unstyled">
+            <li>
+              <p>
+                <strong>Participate</strong>
+              </p>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/downloads">Download</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/forums/">Forums</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/mail/">Mailing Lists</a>
+            </li>
+            <li>
+              <a href="https://wiki.eclipse.org/">Wiki</a>
+            </li>
+            <li>
+              <a href="https://wiki.eclipse.org/IRC">IRC</a>
+            </li>
+          </ul>
+          <ul class="col-sm-8 list-unstyled">
+            <li>
+              <p>
+                <strong>Eclipse IDE</strong>
+              </p>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/downloads">Download</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/downloads">Learn more</a>
+            </li>
+            <li>
+              <a href="https://help.eclipse.org">Documentation</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/getting_started">Getting Started / Support</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/contribute/">How to Contribute</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/ide/">IDE and Tools</a>
+            </li>
+            <li>
+              <a href="https://www.eclipse.org/forums/index.php/f/89/">Newcomer Forum</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</li>
+<li class="dropdown eclipse-more main-menu-search open">
+  <a data-toggle="dropdown" class="dropdown-toggle" role="button" aria-label="Open Google Search menu" aria-expanded="true">
+    <i class="fa fa-search"></i>
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <!-- Content container to add padding -->
+      <div class="yamm-content">
+        <div class="row">
+          <div class="col-sm-24">
+            <p>Search</p>
+            <form action="https://www.eclipse.org/home/search" method="get">
+              <div class="form-group">
+                <input class="form-control margin-bottom-10" type="textfield" name="q" placeholder="Search">
+                <input class="btn btn-primary" type="submit" value="Submit">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</li>
+
+
+              </ul>
+            </div>
+            <div class=navbar-header>
+              <button type=button class=navbar-toggle data-toggle=collapse data-target=#navbar-main-menu>
+              <span class=sr-only>Toggle navigation</span>
+              <span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button>
+              <div class=wrapper-logo-mobile><a class="navbar-brand visible-xs" title="Hugo Solstice Theme" href=https://www.eclipse.org><img width=140 class="logo-eclipse-default-mobile img-responsive" src=https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-white-orange.svg alt="Hugo Solstice Theme"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron featured-jumbotron margin-bottom-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-20 col-md-offset-2 col-sm-18 col-sm-offset-3">
+          <h1>Eclipse GlassFish</h1>
+          <h2>Open Source Jakarta EE Platform Implementation</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <section class="default-breadcrumbs hidden-print" id="breadcrumb">
+  <div class="container">
+  <h3 class="sr-only">Breadcrumbs</h3>
+  <div class="row">
+    <div class="col-sm-24">
+      <ol class="breadcrumb">
+        <li>
+          <a href="https://www.eclipse.org/">Home</a>
+        </li>
+        <li class="active">
+          <a href="http://localhost:4000/">Eclipse GlassFish</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  </div>
+</section>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="nav top-nav hidden-print">
+    <ul>
+        <li class="icon download">
+            <a href="/download.html">Download<p>Distributions, Release Notes</p></a>
+            </li>
+        <li class="icon documentation">
+            <a href="/documentation.html">Documentation<p>User Guides, Manuals</p></a>
+        </li>
+        <li class="icon contributing">
+            <a href="/CONTRIBUTING.html">Get Involved<p>Community, Developer Resources</p></a>
+        </li>
+        <li class="icon support">
+            <a href="/support.html">Support<p>Professional Services or Support</p></a>
+        </li>
+    </ul>
+</div>
+
+          <div class="col-md-18 padding-bottom-30">
+            <h1 id="eclipse-glassfish">Eclipse GlassFish</h1>
+
+<h2 id="about">About</h2>
+
+<p>Eclipse GlassFish is a <a href="compatibility">Jakarta EE compatible implementation</a>
+sponsored by the Eclipse Foundation.</p>
+
+<h2 id="latest-news">Latest News</h2>
+
+<h2 id="may-27-2025--eclipse-glassfish-7025-available">May 27, 2025 – Eclipse GlassFish 7.0.25 Available</h2>
+
+<p>This update emphasizes major cleanups, system optimizations, and prepares the codebase for easier future maintenance, notably in anticipation of the upcoming 7.1.0 release.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<h2 id="april-23-2025--eclipse-glassfish-7024-available">April 23, 2025 – Eclipse GlassFish 7.0.24 Available</h2>
+
+<p>This release marks an important step forward by introducing support for JDK 24 in GlassFish 7 — a capability that had previously only been available in milestone builds of GlassFish 8. Achieving this required new versions of CORBA, ORB, and PFL, the result of many months of dedicated work by the team.</p>
+
+<p>The team also undertook a significant revision of how scripts are used across the project. All Linux scripts now consistently use Bash, and a unified method has been adopted for resolving the AS_INSTALL path across all platforms. Additionally, an issue on Windows related to the %t placeholder—used in JDK log formatting—was resolved by ensuring it is properly escaped.</p>
+
+<p>Faster Deployment was achieved by improved file handling; the team replaced custom file discovery with Files.walkFileTree and switched from URI to Path, also adopting try-with-resources for better resource management. On Windows 11, deployment time for specifically selected huge applications dropped from 110s to 100s, with potential for 92s using caching. YourKit profiling showed a 19s improvement in FileSystem.hasBooleanAttributes.</p>
+
+<h2 id="march-14-2025--eclipse-glassfish-7023-available">March 14, 2025 – Eclipse GlassFish 7.0.23 Available</h2>
+
+<p>The key feature for this release is making SSH nodes work on the Windows operating system, and while at it improve the way they work on Linux. The team mainly focussed on this work, and a lot of effort went into it. We’re really happy to have achieved the goal to have it fully working. Next to that some important fixes were done for logging and specifically a regression for the security principal was fixed.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<h2 id="february-3-2025--eclipse-glassfish-7022-available">February 3, 2025 – Eclipse GlassFish 7.0.22 Available</h2>
+
+<p>The first release of 2025 is here; GlassFish 7.0.22!</p>
+
+<p>A smaller release while the OmniFish team is working on perfecting SSH in a separate feature branch. Still, a few important dependencies have been updated; notably Concurrō (Concurrency), EclipseLink (Persistence) and Jersey (REST). Furthermore, GlassFish has received a few security improvements: the admin flow login was improved by Alexander Pinčuk, and the OmniFish team improved the command logger, which now hides passwords in logged messages.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<h2 id="january-3-2024--eclipse-glassfish-7021-available">January 3, 2024 – Eclipse GlassFish 7.0.21 Available</h2>
+
+<p>We’re over the moon to present you our first release of 2025: GlassFish 7.0.21!</p>
+
+<p>This release was all about hunting down a few nasty bugs reported by GlassFish users: restart hanging on fast machines (including ephemeral ports appearing when stopping GlassFish), random 403 responses for authenticated sessions and Faces that was failing to initialize on GlassFish embedded. We’re proud to announce that after a lot of research and a lot of work, we were able to squash them all. A special thanks to our users for reporting these and helping us to narrow them down!</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<h2 id="december-3-2024--eclipse-glassfish-7020-available">December 3, 2024 – Eclipse GlassFish 7.0.20 Available</h2>
+
+<p>All of us from GlassFish are joyful with the release of GlassFish 7.0.20!</p>
+
+<p>While working on GlassFish 7.1.0 and GlassFish 8, we didn’t leave the stable 7.0.x series in the dark. In this release we updated a lot of our dependencies to their latest versions and did a large amount of testing to ensure everything worked as required. We also improved stability again by squashing a number of outstanding bugs.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<h2 id="november-1-2024--eclipse-glassfish-7019-available">November 1, 2024 – Eclipse GlassFish 7.0.19 Available</h2>
+
+<p>The full GlassFish team is happy to present you another great GlassFish release; Eclipse GlassFish 7.0.19!</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<p>This release is mostly just maintenance. It contains some updates, some code cleanup, few very important bug fixes and few new features to make your life easier.</p>
+
+<h2 id="october-2-2024--eclipse-glassfish-7018-available">October 2, 2024 – Eclipse GlassFish 7.0.18 Available</h2>
+
+<p>The full GlassFish team is happy to present you another great GlassFish release; Eclipse GlassFish 7.0.18!</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<p>This release is all about an exciting new feature that allows running GlassFish Embedded from the command line using <code class="language-plaintext highlighter-rouge">java -jar glassfish-embedded.jar</code>. It supports configuration via command line arguments and/or config files in the current directory, such as setting the HTTP port, deploying applications passed as arguments and running arbitrary AsAdmin commands at boot. Aside of that we did a large amount of maintenance for the internal modules <code class="language-plaintext highlighter-rouge">nucleus-admin</code> and <code class="language-plaintext highlighter-rouge">glassfish</code>, and fixed various issues that were reported by users.</p>
+
+<h2 id="august-30-2024--eclipse-glassfish-7017-available">August 30, 2024 – Eclipse GlassFish 7.0.17 Available</h2>
+
+<p>Another great release, Eclipse GlassFish 7.0.17, is here.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<p>In this summer 2024 release of GlassFish we did a lot of maintenance in which we will continue in future releases. We fixed several security issues and the build now passes also in Java 23. We welcome feedback - if you notice that something doesn’t work as expected, feel free to create an issue or even better create your own pull request.</p>
+
+<h2 id="july-31-2024--eclipse-glassfish-7016-available">July 31, 2024 – Eclipse GlassFish 7.0.16 Available</h2>
+
+<p>With much joy we present you Eclipse GlassFish 7.0.16.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<p>In this summer 2024 release of GlassFish we added several new features. Specifically new is an admin command logger, which logs graphical interactions with the admin UI for usage in scripts. GlassFish now also allows resource references in persistence.xml, and we added a great new feature where we are creating temporary snapshots of the external application libraries during application startup, so any update of these is not longer system dependent. We also did a major refactoring of the aging TLS code and optimized the GJULE logging.</p>
+
+<h2 id="may-31-2024--eclipse-glassfish-7015-available">May 31, 2024 – Eclipse GlassFish 7.0.15 Available</h2>
+
+<p>We are very happy to bring you Eclipse GlassFish 7.0.15.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<p>In this release we updated and thoroughly tested a lot of important components, including Exousia (Security), Mojarra (Faces), Jersey (REST) and Yasson/Parsson (JSON).</p>
+
+<p>Testing has been improved by fixing a number of issues within the tests itself.</p>
+
+<p>Finally, we fixed a number of errors in the documentation.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<h2 id="march-31-2024--eclipse-glassfish-7014-available">March 31, 2024 – Eclipse GlassFish 7.0.14 Available</h2>
+
+<p>We are very happy to bring you Eclipse GlassFish 7.0.14.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<p>This release features among others an important NPE fix for the SSHLauncher and is highly recommended for our users who make use of this launcher.</p>
+
+<p>The thread safety of transactions was improved, and the JDBC connection pool sizing logic was also improved, fixing an annoying bug.</p>
+
+<p>To maintain future quality of GlassFish, many fixes to the internal TCKs tests were done.</p>
+
+<p>As a new feature, command completion is now enabled in the OSGi interactive console.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a></p>
+
+<h2 id="february-29-2024--eclipse-glassfish-7013-available">February 29, 2024 – Eclipse GlassFish 7.0.13 Available</h2>
+
+<p>We are very happy to bring you Eclipse GlassFish 7.0.13.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<p>In the release for this month we replaced many synchronized blocks by reentrant locks (to accommodate JDK 21 virtual threads).</p>
+
+<p>We also looked at SSO between clusters, and fixed a long standing bug there.</p>
+
+<p>A long running investigation into potential resource leaks finally came to a conclusion, and resulted in many fixes throughout the code base. The admin console also saw various improvements, specifically with respect to loading.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a></p>
+
+<h2 id="january-30-2024--eclipse-glassfish-7012-available">January 30, 2024 – Eclipse GlassFish 7.0.12 Available</h2>
+
+<p>We are very happy to bring you Eclipse GlassFish 7.0.12.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<p>This release we focused on finding and fixing the root cause of several “strange” WebSocket related bugs that we witnessed in the past. We also did a similar thing related to several issues with running apps on the default context root, especially where after authentication redirects happened to another URL.</p>
+
+<p>Furthermore we looked into problems with authentication and SSO in a cluster and did some initial fixes. Handling and processing of logging was looked at once again, something we have been improving a lot step by step through various iterations of releases.</p>
+
+<p>Finally but not least a nasty ConcurrentModificationException was fixed, and a memory leak (via HK2) was solved.</p>
+
+<p>Download links are available from the <a href="/download.html">GlassFish Download page</a>.</p>
+
+<h2 id="older-news-"><a href="/older-news.html">Older news …</a></h2>
+
+          </div>
+          <div class="col-md-6  padding-bottom-30">
+            <!-- nav -->
+<aside id="main-sidebar">
+  <ul id="leftnav" class="ul-left-nav fa-ul hidden-print">
+
+    <li class="separator">
+      <a class="separator" href="/">Project Resources</a>
+    </li>
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="https://github.com/eclipse-ee4j/glassfish">Sources</a>
+    </li>
+    
+
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="/documentation">Documentation</a>
+    </li>
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="/faq">FAQ</a>
+    </li>
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="/download">Download</a>
+    </li>
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="https://github.com/eclipse-ee4j/glassfish/issues">Issue Tracker</a>
+    </li>
+    
+
+    
+    <li>
+      <i class="fa fa-caret-right fa-fw"></i>
+      <a target="_self" href="https://accounts.eclipse.org/mailing-list/glassfish-dev">Mailing list</a>
+    </li>
+    
+    </ul>
+  </aside>
+  
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript">
+    /* hide search bar on load, it's set to be open in the theme */
+    document.querySelector('.main-menu-search').classList.remove("open");
+  </script>
+
+    <p id="back-to-top">
+  <a class="visible-xs" href="#top">Back to the top</a>
+</p>
+<footer id="solstice-footer">
+  <div class="container">
+    <div class="row">
+      <section class="col-sm-6 hidden-print" id="footer-eclipse-foundation">
+        <h2 class="section-title">Eclipse Foundation</h2>
+        <ul class="nav">
+          <li><a href="https://www.eclipse.org/org/">About Us</a></li>
+          <li>
+            <a href="https://www.eclipse.org/org/foundation/contact.php">Contact Us</a>
+          </li>
+          <li><a href="https://www.eclipse.org/sponsor">Sponsor</a></li>
+          <li><a href="https://www.eclipse.org/membership">Members</a></li>
+          <li>
+            <a href="https://www.eclipse.org/org/documents/">Governance</a>
+          </li>
+          <li>
+            <a
+              href="https://www.eclipse.org/org/documents/Community_Code_of_Conduct.php">Code of Conduct</a
+            >
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/artwork/">Logo and Artwork</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a>
+          </li>
+          <li><a href="https://www.eclipse.org/careers/">Careers</a></li>
+        </ul>
+      </section>
+      <section class="col-sm-6 hidden-print" id="footer-legal">
+        <h2 class="section-title">Legal</h2>
+        <ul class="nav">
+          <li>
+            <a href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/legal/termsofuse.php">Terms of Use</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/legal/epl-2.0/">Eclipse Public License</a>
+          </li>
+          <li><a href="https://www.eclipse.org/legal/">Legal Resources</a></li>
+        </ul>
+      </section>
+      <section class="col-sm-6 hidden-print" id="footer-useful-links">
+        <h2 class="section-title">Useful Links</h2>
+        <ul class="nav">
+          <li><a href="https://bugs.eclipse.org/bugs/">Report a Bug</a></li>
+          <li><a href="//help.eclipse.org/">Documentation</a></li>
+          <li>
+            <a href="https://www.eclipse.org/contribute/">How to Contribute</a>
+          </li>
+          <li><a href="https://www.eclipse.org/mail/">Mailing Lists</a></li>
+          <li><a href="https://www.eclipse.org/forums/">Forums</a></li>
+          <li><a href="//marketplace.eclipse.org">Marketplace</a></li>
+        </ul>
+      </section>
+      <section class="col-sm-6 hidden-print" id="footer-other">
+        <h2 class="section-title">Other</h2>
+        <ul class="nav">
+          <li><a href="https://www.eclipse.org/ide/">IDE and Tools</a></li>
+          <li><a href="https://www.eclipse.org/projects">Projects</a></li>
+          <li>
+            <a href="https://www.eclipse.org/org/workinggroups/">Working Groups</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/org/research/">Research@Eclipse</a>
+          </li>
+          <li>
+            <a href="https://www.eclipse.org/security/">Report a Vulnerability</a>
+          </li>
+          <li><a href="https://status.eclipse.org">Service Status</a></li>
+        </ul>
+      </section>
+      <div class="col-sm-24 margin-top-20">
+        <div class="row">
+          <div id="copyright" class="col-md-16">
+            <p id="copyright-text">
+              Copyright © Eclipse Foundation. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-8 social-media">
+            <ul class="list-inline">
+              <li>
+                <a class="social-media-link fa-stack fa-lg"
+                  href="https://twitter.com/EclipseFdn">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                  <span class="sr-only">Twitter account</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg"
+                  href="https://www.facebook.com/eclipse.org">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                  <span class="sr-only">Facebook account</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg"
+                  href="https://www.youtube.com/user/EclipseFdn">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-youtube fa-stack-1x"></i>
+                  <span class="sr-only">Youtube account</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-media-link fa-stack fa-lg"
+                  href="https://www.linkedin.com/company/eclipse-foundation">
+                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x"></i>
+                  <span class="sr-only">Linkedin account</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="scrollup" style="bottom: 100px; display: inline">
+        Back to the top
+      </a>
+    </div>
+  </div>
+</footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/main.min.js?var=1.3"></script>
+
+  </body>
+</html>
