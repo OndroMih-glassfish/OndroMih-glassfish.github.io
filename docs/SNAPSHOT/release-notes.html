@@ -51,14 +51,8 @@
 <li><a href="#asadmin-subcommands"><code>asadmin</code> Subcommands</a></li>
 <li><a href="#deprecated-unsupported-and-obsolete-options">Deprecated, Unsupported, and Obsolete Options</a></li>
 <li><a href="#applications-that-use-apache-derby">Applications That Use Apache Derby</a></li>
-<li><a href="#no-support-for-client-vm-on-windows-amd64">No Support for Client VM on Windows AMD64</a></li>
 <li><a href="#metro-reliable-messaging-in-inorder-delivery-mode">Metro Reliable Messaging in <code>InOrder</code> Delivery Mode</a></li>
 <li><a href="#no-support-for-kerberos-on-aix">No Support for Kerberos on AIX</a></li>
-</ul>
-</li>
-<li><a href="#documentation-errata">Documentation Errata</a>
-<ul class="sectlevel3">
-<li><a href="#upgrading-to-oracle-glassfish-server-is-not-necessary">Upgrading to Eclipse GlassFish Is Not Necessary</a></li>
 </ul>
 </li>
 <li><a href="#features-available-only-in-the-full-platform">Features Available Only in the Full Platform</a></li>
@@ -592,9 +586,6 @@ view the most up-to-date product information.</p>
 </li>
 <li>
 <p><a href="#restrictions-and-deprecated-functionality">"Restrictions and Deprecated Functionality"</a></p>
-</li>
-<li>
-<p><a href="#documentation-errata">"Documentation Errata"</a></p>
 </li>
 <li>
 <p><a href="#features-available-only-in-the-full-platform">"Features Available Only in the Full Platform"</a></p>
@@ -1204,9 +1195,6 @@ Eclipse GlassFish 7.</p>
 <p><a href="#applications-that-use-apache-derby">Applications That Use Apache Derby</a></p>
 </li>
 <li>
-<p><a href="#no-support-for-client-vm-on-windows-amd64">No Support for Client VM on Windows AMD64</a></p>
-</li>
-<li>
 <p><a href="#metro-reliable-messaging-in-inorder-delivery-mode">Metro Reliable Messaging in <code>InOrder</code> Delivery Mode</a></p>
 </li>
 </ul>
@@ -1455,17 +1443,6 @@ Derby. For example:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="no-support-for-client-vm-on-windows-amd64"><a class="anchor" href="#no-support-for-client-vm-on-windows-amd64"></a>No Support for Client VM on Windows AMD64</h4>
-<div class="paragraph">
-<p>By default, the Eclipse GlassFish DAS uses the Client VM to achieve best
-startup and deployment performance. If you are using Windows AMD64, edit
-the <code>domain.xml</code> file to remove the line
-<code>&lt;jvm-options&gt;-client&lt;jvm-options&gt;</code>. In this case, JVM ergonomics
-chooses the appropriate kind of VM for the given platform. Note that
-server instances use the Server VM by default.</p>
-</div>
-</div>
-<div class="sect3">
 <h4 id="metro-reliable-messaging-in-inorder-delivery-mode"><a class="anchor" href="#metro-reliable-messaging-in-inorder-delivery-mode"></a>Metro Reliable Messaging in <code>InOrder</code> Delivery Mode</h4>
 <div class="paragraph">
 <p>The Metro Reliable Messaging in <code>InOrder</code> Delivery mode has not been
@@ -1482,41 +1459,6 @@ supported feature.</p>
 <div class="paragraph">
 <p>For the complete report about this issue, see
 <a href="https://github.com/javaee/glassfish/issues/16728"><code>Issue-16728</code></a></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="documentation-errata"><a class="anchor" href="#documentation-errata"></a>Documentation Errata</h3>
-<div class="paragraph">
-<p>This section describes documentation errata.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#upgrading-to-oracle-glassfish-server-is-not-necessary">Upgrading to Eclipse GlassFish Is Not Necessary</a></p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="upgrading-to-oracle-glassfish-server-is-not-necessary"><a class="anchor" href="#upgrading-to-oracle-glassfish-server-is-not-necessary"></a>Upgrading to Eclipse GlassFish Is Not Necessary</h4>
-<div class="paragraph">
-<p>The Eclipse GlassFish Administration Guide discusses
-upgrading Eclipse GlassFish to Eclipse GlassFish. Eclipse GlassFish 4.x is only an open source release, so this
-upgrade is not necessary.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Upgrading may not work for Eclipse GlassFish 7</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -1786,7 +1728,7 @@ distribution.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jakarta.ee/specifications/xml-binding/">XML Binding</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.0.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.0.6</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
@@ -1810,7 +1752,7 @@ distribution.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://jakarta.ee/specifications/mail/">Mail</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
@@ -1915,7 +1857,7 @@ distribution.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://microprofile.io/specifications/rest-client/">MicroProfile REST Client</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">X<sup>*</sup></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
@@ -1960,8 +1902,8 @@ distribution.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Eclipse Angus</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta Mail 2.1.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta Mail 2.1.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provides email services.</p></td>
 </tr>
 <tr>
@@ -1979,7 +1921,7 @@ distribution.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Eclipse Jersey</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3.1.11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta RESTful Web Services 3.1.0, MicroProfile REST Client 3.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta RESTful Web Services 3.1.0, MicroProfile REST Client 4.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Framework for RESTful web services and clients.</p></td>
 </tr>
 <tr>
@@ -1996,7 +1938,7 @@ distribution.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Eclipse Mojarra</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.0.11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.0.12</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta Faces 4.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Faces implementation with Mojarra extensions.</p></td>
 </tr>
@@ -2038,19 +1980,19 @@ distribution.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">EclipseLink</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.0.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.0.8</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta Persistence 3.1.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Persistence implementation with extensions.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FasterXML Jackson</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.18.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.20.0</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alternative JSON processing and binding implementation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GlassFish Concurro</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta Concurrency 3.0.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Concurrency utilities.</p></td>
 </tr>
@@ -2074,19 +2016,19 @@ distribution.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Helidon Config</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.2.12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.2.15</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MicroProfile Config 3.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Configuration framework for applications.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Hibernate Validator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.0.2.Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.0.3.Final</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta Validation 3.0.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Validation implementation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nimbus JOSE JWT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10.4.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.5</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Handling JSON Web Tokens (JWT) and JSON Object Signing and Encryption (JOSE).</p></td>
 </tr>
@@ -2098,7 +2040,7 @@ distribution.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Weld</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.5.Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.6.Final</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta Contexts and Dependency Injection 4.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CDI implementation.</p></td>
 </tr>
@@ -2167,7 +2109,7 @@ project dashboards and issue tracking database</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-08-30 10:05:05 +0200
+Last updated 2025-10-16 09:35:32 +0200
 </div>
 </div>
 </body>

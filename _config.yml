@@ -1,4 +1,4 @@
-theme: jekyll-theme-eclipsefdn
+remote_theme: eclipsefdn/jekyll-theme-eclipsefdn
 
 title: [Eclipse GlassFish]
 description: [Open Source Jakarta EE Platform Implementation]
@@ -16,5 +16,3 @@ links:
 include:
   - LICENSE.md
   - CONTRIBUTING.md
-
-repository: eclipse-ee4j/glassfish

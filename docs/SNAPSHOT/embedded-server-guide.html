@@ -1045,7 +1045,12 @@ The value will be treated as a command to execute at startup.</p>
 <li>
 <p>Keys that start with the "deploy." prefix, followed by any text. The
 value will be treated as an application to deploy at startup, as if it
-was specified on the command line.
+was specified on the command line.</p>
+</li>
+<li>
+<p>If a property name doesn&#8217;t match any already supported patterns and is not
+a recognized GlassFish property, it will be set as a system property, if
+it&#8217;s not already defined.
 For example, the $Eclipse GlassFish domain directory can be specified with the
 usual Embedded $Eclipse GlassFish property
 "glassfish.embedded.tmpdir=myDomainDir", as well as with the property
@@ -3675,7 +3680,7 @@ archive (JAR) file in which embedded Eclipse GlassFish is distributed:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-08-30 10:05:05 +0200
+Last updated 2025-10-16 09:35:31 +0200
 </div>
 </div>
 </body>
